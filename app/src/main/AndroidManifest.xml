@@ -4,20 +4,87 @@
 
     <application
         android:allowBackup="true"
+        android:fullBackupOnly="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.GreenKiosk">
         <activity
-            android:name=".MainActivity"
+            android:name=".MamaMboga.MamaMbogaSignUp"
+            android:exported="true" />
+
+
+        <activity
+            android:name=".MamaMboga.CompleteOrdersActivity"
+            android:exported="true" />
+
+
+        <activity
+            android:name=".MamaMboga.loginActivity"
+            android:exported="true" />
+
+        <activity
+            android:name=".MamaMboga.MamaMboga_Resetpassword"
+            android:exported="true" />
+
+        <activity
+            android:name=".MamaMboga.MamaMbogaPending"
+            android:exported="true" />
+
+
+        <activity
+            android:name=".MamaMboga.MamaMbogaVerificationCode"
+            android:exported="true" />
+
+
+
+
+
+        <activity android:name=".Customer.StartActivity"
+            android:exported="true" />
+
+
+        <activity android:name=".Customer.CategoryActivity"
+            android:exported="true" />
+
+        <activity android:name=".Customer.ProductCategoryActivity"
+            android:exported="true" />
+
+        <activity android:name=".Customer.CustomerCart"
+            android:exported="true" />
+        <activity android:name=".Customer.CustomerSignUp"
+            android:exported="true" />
+
+        <activity android:name=".Customer.CustomerLogIn"
+            android:exported="true" />
+        <activity android:name=".Customer.CustomerVerification"
+            android:exported="true" />
+
+
+        <activity android:name=".Customer.CustomerCheckout"
+            android:exported="true" />
+        <activity
+            android:name=".MamaMboga.SplashScreen"
             android:exported="true">
+
+
+
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".MamaMboga.WorkinghoursActivity"
+            android:exported="true" />
+
+
+
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" />
     </application>
 
 </manifest>

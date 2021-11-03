@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="cardKilograms">
+        <item>5.5kgs</item>
+        <item>5.5kgs</item>
+        <item>5.5kgs</item>
+        <item>5.5kgs</item>
+        <item>5.5kgs</item>
+        <item>5.5kgs`</item>
+    </string-array>
+</resources>

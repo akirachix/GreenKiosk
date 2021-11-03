@@ -1,11 +1,12 @@
-package com.example.greenkiosk
+package com.example.greenkiosk.MamaMboga
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.example.greenkiosk.R
 
-class MainActivity : AppCompatActivity() {
+class Update_Orders_Activity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        setContentView(R.layout.activity_update_orders)
     }
 }

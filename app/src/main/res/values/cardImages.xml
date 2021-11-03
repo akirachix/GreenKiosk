@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="cardImages">
+        <item>https://www.gardeningknowhow.com/wp-content/uploads/2021/05/whole-and-slices-watermelon.jpg</item>
+        <item>https://aldprdproductimages.azureedge.net/media/resized/$Aldi_GB/ALL_RESIZED3/56124_0_XL.png</item>
+        <item>https://cdnprod.mafretailproxy.com/sys-master-root/h74/h68/15039637389342/1545702_main.jpg_1700Wx1700H</item>
+        <item>https://www.naturespride.eu/media/4syh0q3p/mango-kent.jpg</item>
+        <item>https://usapple.org/wp-content/uploads/2019/10/apple-gala.png</item>
+        <item>https://pbs.twimg.com/profile_images/1479795532/greenlemon_400x400.png</item>
+    </string-array>
+</resources>
