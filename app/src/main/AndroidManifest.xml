@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.greenkiosk">
-    <uses-permission android:name="android.permission.INTERNET"></uses-permission>
+
+    <uses-permission android:name="android.permission.INTERNET"/>
 
     <application
         android:allowBackup="true"
@@ -15,7 +16,6 @@
             android:name=".MamaMboga.MamaMbogaSignUp"
             android:exported="true" />
 
-
         <activity
             android:name=".MamaMboga.CompleteOrdersActivity"
             android:exported="true" />
@@ -23,55 +23,57 @@
 
         <activity
             android:name=".MamaMboga.loginActivity"
-            android:exported="true" />
+            android:exported="true"
+            android:parentActivityName=".MamaMboga.MamaMbogaVerificationCode"/>
 
         <activity
             android:name=".MamaMboga.MamaMboga_Resetpassword"
-            android:exported="true" />
+            android:exported="true"
+            android:parentActivityName=".MamaMboga.loginActivity"/>
 
         <activity
             android:name=".MamaMboga.MamaMbogaPending"
             android:exported="true" />
 
-
         <activity
             android:name=".MamaMboga.MamaMbogaVerificationCode"
-            android:exported="true" />
-
-
-
-
+            android:exported="true"
+            android:parentActivityName=".MamaMboga.WorkinghoursActivity"/>
 
         <activity android:name=".Customer.StartActivity"
             android:exported="true" />
 
-
         <activity android:name=".Customer.CategoryActivity"
-            android:exported="true" />
+            android:exported="true"
+            android:parentActivityName=".Customer.StartActivity"/>
 
         <activity android:name=".Customer.ProductCategoryActivity"
-            android:exported="true" />
+            android:exported="true"
+            android:parentActivityName=".Customer.CategoryActivity"/>
 
         <activity android:name=".Customer.CustomerCart"
-            android:exported="true" />
+            android:exported="true"
+            android:parentActivityName=".Customer.ProductCategoryActivity"/>
+
         <activity android:name=".Customer.CustomerSignUp"
-            android:exported="true" />
+            android:exported="true"
+            android:parentActivityName=".Customer.CustomerCheckout"/>
 
         <activity android:name=".Customer.CustomerLogIn"
-            android:exported="true" />
+            android:exported="true"
+            android:parentActivityName=".Customer.CustomerVerification"/>
+
         <activity android:name=".Customer.CustomerVerification"
-            android:exported="true" />
+            android:exported="true"
+            android:parentActivityName=".Customer.CustomerSignUp"/>
 
 
         <activity android:name=".Customer.CustomerCheckout"
-            android:exported="true" />
+            android:exported="true"
+            android:parentActivityName=".Customer.CustomerCart"/>
         <activity
             android:name=".MamaMboga.SplashScreen"
             android:exported="true">
-
-
-
-
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
@@ -80,8 +82,6 @@
         <activity
             android:name=".MamaMboga.WorkinghoursActivity"
             android:exported="true" />
-
-
 
         <meta-data
             android:name="preloaded_fonts"
