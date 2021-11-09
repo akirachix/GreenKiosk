@@ -18,7 +18,7 @@ class RvProduct_OrderAdapter(
     var cardKilograms: Array<String>,
     var cardPrices: Array<String>,
     var context: Context
-): RecyclerView.Adapter<ProductOrdersViewHolder>() {
+    ): RecyclerView.Adapter<ProductOrdersViewHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ProductOrdersViewHolder {
         var itemView= LayoutInflater.from(parent.context).inflate(R.layout.activity_customer_products_view,parent,false)
         return ProductOrdersViewHolder(itemView)

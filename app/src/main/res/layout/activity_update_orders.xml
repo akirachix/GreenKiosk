@@ -11,7 +11,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintLeft_toRightOf="parent"
-        app:menu="@menu/menu"
+        app:menu="@menu/menu1"
         android:background="@color/white"
         app:itemIconTint="#000000"
         app:itemTextColor="#000000">
@@ -46,7 +46,7 @@
         app:layout_constraintBottom_toTopOf="@+id/nav"/>
 
     <TextView
-        android:id="@+id/tvcategories"
+        android:id="@+id/tvCategories"
         android:layout_width="126dp"
         android:layout_height="28dp"
         android:text="Categories"
@@ -115,7 +115,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.003"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvcategories"
+        app:layout_constraintTop_toBottomOf="@+id/tvCategories"
         app:layout_constraintVertical_bias="0.051" />
     <TextView
         android:id="@+id/tvwonions"
@@ -184,7 +184,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvmangoes" />
     <TextView
-        android:id="@+id/tvmelon"
+        android:id="@+id/tvMelon"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
@@ -195,7 +195,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvpaw" />
     <TextView
-        android:id="@+id/tvlemon"
+        android:id="@+id/tvLemon"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
@@ -204,9 +204,9 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvmelon" />
+        app:layout_constraintTop_toBottomOf="@+id/tvMelon" />
     <TextView
-        android:id="@+id/tvgrapes"
+        android:id="@+id/tvGrapes"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
@@ -215,5 +215,5 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.013"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvlemon" />
+        app:layout_constraintTop_toBottomOf="@+id/tvLemon" />
 </androidx.constraintlayout.widget.ConstraintLayout>
