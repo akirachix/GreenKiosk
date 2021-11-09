@@ -3,12 +3,14 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="app/src/main/res/drawable/round_shape.xml" value="0.25" />
         <entry key="app/src/main/res/layout/activity_customer_cart.xml" value="0.1" />
         <entry key="app/src/main/res/layout/activity_customer_checkout.xml" value="0.1" />
-        <entry key="app/src/main/res/layout/activity_customer_log_in.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/activity_customer_log_in.xml" value="0.33" />
         <entry key="app/src/main/res/layout/activity_customer_products_recyclerview.xml" value="0.1" />
         <entry key="app/src/main/res/layout/activity_customer_products_view.xml" value="0.1" />
         <entry key="app/src/main/res/layout/activity_customer_sign_up.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/activity_login.xml" value="0.22" />
         <entry key="app/src/main/res/layout/activity_mama_mboga_pending.xml" value="0.13240740740740742" />
         <entry key="app/src/main/res/layout/activity_mama_mboga_resetpassword.xml" value="0.13240740740740742" />
         <entry key="app/src/main/res/layout/activity_mama_mboga_sign_up.xml" value="0.17685185185185184" />
