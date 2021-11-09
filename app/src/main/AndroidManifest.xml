@@ -18,6 +18,7 @@
         <activity
             android:name=".Customer.PaymentMethodActivity"
             android:exported="true" />
+
         <activity
             android:name=".MamaMboga.MamaMbogaSignUp"
             android:exported="true" />
