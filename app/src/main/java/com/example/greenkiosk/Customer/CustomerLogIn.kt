@@ -16,8 +16,8 @@ class CustomerLogIn:AppCompatActivity(){
         setContentView(R.layout.activity_customer_log_in)
 
         fun castView(){
-            var etMobileNumber = findViewById<EditText>(R.id.etphoneNumber)
-            var etPassword = findViewById<EditText>(R.id.etpassword)
+//            var etMobileNumber = findViewById<EditText>(R.id.etphoneNumber)
+//            var etPassword = findViewById<EditText>(R.id.etpassword)
             var btncheck=findViewById<Button>(R.id.btncheck)
         }
 

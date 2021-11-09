@@ -19,7 +19,6 @@ class RvProductActivity(var productList: List<Products>,var context: Context): R
         return ProductViewHolder(productItem)
 
     }
-
     override fun onBindViewHolder(holder: ProductViewHolder, position: Int) {
         val currentProducts = productList.get(position)
         holder.productTitle.text = currentProducts.name
@@ -31,19 +30,12 @@ class RvProductActivity(var productList: List<Products>,var context: Context): R
             var intent= Intent(context,CustomerCart::class.java)
             intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
             context.startActivity(intent)
-
-
-
-
         }
-
     }
-
     override fun getItemCount(): Int {
 
         return productList.size
     }
-
 }
 class ProductViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
     var productTitle = itemView.findViewById<TextView>(R.id.productTitle)

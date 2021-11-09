@@ -21,7 +21,7 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/cvOrders"
+            android:id="@+id/consOrders"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             tools:ignore="DuplicateIds">
@@ -71,27 +71,28 @@
                 app:layout_constraintTop_toBottomOf="@+id/etProduct" />
 
             <Button
-                android:id="@+id/etMinus"
+                android:id="@+id/btnMinus"
+                style="@style/Widget.MaterialComponents.Button.Icon"
                 android:layout_width="42dp"
                 android:layout_height="43dp"
                 android:layout_marginStart="16dp"
-                style="@style/Widget.MaterialComponents.Button.Icon"
-                app:icon="@drawable/ic_baseline_remove_24"
                 android:layout_marginBottom="9dp"
                 android:background="@drawable/custom_button"
-                app:layout_constraintBottom_toBottomOf="@+id/etAdd"
+                app:icon="@drawable/ic_baseline_remove_24"
+                app:layout_constraintBottom_toBottomOf="@+id/btnAdd"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="@+id/etAdd"/>
+                app:layout_constraintTop_toTopOf="@+id/btnAdd"
+                app:layout_constraintVertical_bias="0.0" />
 
             <Button
-                android:id="@+id/etAdd"
+                android:id="@+id/btnAdd"
+                style="@style/Widget.MaterialComponents.Button.Icon"
                 android:layout_width="42dp"
                 android:layout_height="43dp"
                 android:layout_marginStart="24dp"
                 android:layout_marginTop="47dp"
                 android:layout_marginBottom="15dp"
                 android:background="@drawable/custom_button"
-                style="@style/Widget.MaterialComponents.Button.Icon"
                 app:icon="@drawable/ic_baseline_add_24"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toEndOf="@+id/etNumber"
@@ -103,15 +104,29 @@
                 android:layout_width="10dp"
                 android:layout_height="0dp"
                 android:layout_marginStart="16dp"
-                android:layout_marginBottom="16dp"
+                android:layout_marginBottom="64dp"
                 android:text="0"
                 android:textSize="20dp"
                 android:textStyle="bold"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toStartOf="@+id/etAdd"
-                app:layout_constraintStart_toEndOf="@+id/etMinus" />
+                app:layout_constraintEnd_toStartOf="@+id/btnAdd"
+                app:layout_constraintStart_toEndOf="@+id/btnMinus" />
+
+            <TextView
+                android:id="@+id/processedToCheckout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="17dp"
+                android:layout_marginTop="25dp"
+                android:layout_marginBottom="6dp"
+                android:shadowColor="#43AE60"
+                android:text="Checkout"
+                android:textColor="#43AE60"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/btnMinus" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
-
     </androidx.cardview.widget.CardView>
 </RelativeLayout>

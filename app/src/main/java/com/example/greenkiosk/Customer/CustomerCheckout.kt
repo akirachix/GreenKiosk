@@ -18,22 +18,24 @@ class CustomerCheckout : AppCompatActivity() {
             var intent = Intent(baseContext, CustomerSignUp::class.java)
             startActivity(intent)
         }
-        var etProductName= findViewById<TextView>(R.id.etProductName)
-        val etKilogram = findViewById<TextView>(R.id.etKilogram)
-        val etPrice = findViewById<TextView>(R.id.etPrice)
-        val img = findViewById<ImageView>(R.id.img)
 
 
-        var nameIntent = intent.getStringExtra("Name")
-        var kilogramIntent = intent.getStringExtra("Kilograms")
-        var priceIntent = intent.getStringExtra("Prices")
-        var imageUrl = intent.getStringExtra("imageUrl")
-        Picasso.get()
-            .load(imageUrl).into(img)
-
-        etProductName.text = nameIntent
-        etKilogram.text  = kilogramIntent
-        etPrice.text = priceIntent
+//        var etProductName= findViewById<TextView>(R.id.etProductName)
+//        val etKilogram = findViewById<TextView>(R.id.etKilogram)
+//        val etPrice = findViewById<TextView>(R.id.etPrice)
+//        val img = findViewById<ImageView>(R.id.img)
+//
+//
+//        var nameIntent = intent.getStringExtra("Name")
+//        var kilogramIntent = intent.getStringExtra("Kilograms")
+//        var priceIntent = intent.getStringExtra("Prices")
+//        var imageUrl = intent.getStringExtra("imageUrl")
+//        Picasso.get()
+//            .load(imageUrl).into(img)
+//
+//        etProductName.text = nameIntent
+//        etKilogram.text  = kilogramIntent
+//        etPrice.text = priceIntent
 
     }
 }
