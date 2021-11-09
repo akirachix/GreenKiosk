@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "1035676444509",
+    "project_id": "green-kiosk",
+    "storage_bucket": "green-kiosk.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1035676444509:android:34b5391c681c3ad1e7eab4",
+        "android_client_info": {
+          "package_name": "com.example.greenkiosk"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1035676444509-1u6d3amejsjpnrvkqr6idpubgdnbsf6a.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCilvTGVnRZz48Q5gvSKvtl9Tb_r4CLHec"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1035676444509-1u6d3amejsjpnrvkqr6idpubgdnbsf6a.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
