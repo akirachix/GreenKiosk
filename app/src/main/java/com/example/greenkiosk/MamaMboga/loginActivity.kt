@@ -11,7 +11,7 @@ class loginActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
-        var login = findViewById<Button>(R.id.btnLoginToPassword).setOnClickListener {
+        var login = findViewById<Button>(R.id.btnCSignUp).setOnClickListener {
             var intent = Intent(baseContext, MamaMboga_Resetpassword::class.java)
             startActivity(intent)
         }
