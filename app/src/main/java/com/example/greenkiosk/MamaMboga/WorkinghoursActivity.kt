@@ -12,7 +12,7 @@ class WorkinghoursActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_workinghours)
         var submit = findViewById<Button>(R.id.btnSubmit).setOnClickListener {
-            var intent = Intent(baseContext, MamaMbogaVerificationCode::class.java)
+            var intent = Intent(baseContext,Mamamboga_Location::class.java)
             startActivity(intent)
         }
 
