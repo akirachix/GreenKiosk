@@ -14,9 +14,11 @@ class SignupViewModel:ViewModel() {
 
 
 //    fun signupCustomer(signupRequest: SignupRequest) {
+//        var viewModelScope = null
 //        viewModelScope.launch {
 //            val response = CustomerRepository.signupCustomer(SignupRequest)
 //            if (response.isSuccessful) {
+//                regi
 //                registrationLiveData.postValue(response.body())
 //            } else {
 //                regError.postValue(response.errorBody()?.string())

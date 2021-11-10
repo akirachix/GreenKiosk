@@ -6,14 +6,16 @@ import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
 import com.example.greenkiosk.R
 
-class MamaMbogaVerificationCode : AppCompatActivity() {
+class AccountMamambogaActivity : AppCompatActivity() {
+    lateinit var btnnext:Button
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_mama_mboga_verification_code)
+        setContentView(R.layout.activity_account_mamamboga)
 
-        var verify = findViewById<Button>(R.id.btnverify).setOnClickListener {
-            var intent = Intent(baseContext, loginActivity::class.java)
+        var next= findViewById<Button>(R.id.btnnext).setOnClickListener {
+            var intent = Intent(baseContext,WorkinghoursActivity::class.java)
             startActivity(intent)
         }
+
     }
 }
