@@ -9,6 +9,6 @@ import com.example.greenkiosk.R
 class PaymentMethodActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_payment_method)
+//        setContentView(R.layout.activity_payment_method)
     }
 }

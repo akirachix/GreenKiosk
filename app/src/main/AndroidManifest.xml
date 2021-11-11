@@ -27,7 +27,7 @@
             android:name=".MamaMboga.CompleteOrdersActivity"
             android:exported="true" />
         <activity
-            android:name=".MamaMboga.loginActivity"
+            android:name=".MamaMboga.loginActivity"/>
 
         <activity
             android:name=".MamaMboga.SplashScreen"
