@@ -10,7 +10,7 @@ class MamaMbogaPendingOrders : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_mama_mboga_pending)
-        var login = findViewById<Button>(R.id.btnLoginToPassword).setOnClickListener {
+        var login = findViewById<Button>(R.id.btnCompleted).setOnClickListener {
             var intent = Intent(baseContext, MamaMboga_Resetpassword::class.java)
             startActivity(intent)
         }

@@ -1,4 +1,4 @@
-package com.example.greenkiosk.Customer
+package com.example.greenkiosk.MamaMboga
 
 import android.Manifest
 import android.R
@@ -10,8 +10,7 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
 
-
-class CustomerLocation : AppCompatActivity() {
+class Mamamboga_Location : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_list_item)
@@ -71,7 +70,7 @@ class CustomerLocation : AppCompatActivity() {
                     //foreground permission allowed
                     if (grantResults[i] >= 0) {
                         foreground = true
-                        startActivity(Intent(baseContext, CategoryActivity::class.java))
+                        startActivity(Intent(baseContext, MamaMbogaVerificationCode::class.java))
 
                     } else {
                         Toast.makeText(
@@ -133,4 +132,3 @@ class CustomerLocation : AppCompatActivity() {
         const val REQUEST_CODE_PERMISSIONS = 101
     }
 }
-
