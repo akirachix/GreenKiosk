@@ -58,10 +58,11 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/toolbar3"
         app:layout_constraintVertical_bias="0.053" />
+
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar3"
         android:layout_width="410dp"
-        android:layout_height="100dp"
+        android:layout_height="wrap_content"
         android:background="?attr/colorPrimary"
         android:backgroundTint="#59AF61"
         android:minHeight="?attr/actionBarSize"

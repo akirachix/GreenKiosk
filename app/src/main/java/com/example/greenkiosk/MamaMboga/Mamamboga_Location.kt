@@ -34,7 +34,10 @@ class Mamamboga_Location : AppCompatActivity() {
             ) == PackageManager.PERMISSION_GRANTED
             if (background) {
                 handleLocationUpdates()
-            } else {
+                val intent = Intent(baseContext,MamaMbogaPending::class.java)
+                startActivity(intent)
+            }
+            else {
                 ActivityCompat.requestPermissions(
                     this,
                     arrayOf(Manifest.permission.ACCESS_BACKGROUND_LOCATION),

@@ -1,10 +1,12 @@
 package com.example.greenkiosk.Customer
 
 import android.content.Intent
+import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
-import androidx.appcompat.app.AppCompatActivity
 import com.example.greenkiosk.MamaMboga.AccountMamambogaActivity
+import com.example.greenkiosk.MamaMboga.WorkinghoursActivity
+
 import com.example.greenkiosk.R
 
 class StartActivity : AppCompatActivity() {

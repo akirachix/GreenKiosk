@@ -14,8 +14,8 @@ class CustomerCheckout : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_customer_checkout)
-        var button = findViewById<Button>(R.id.btnchechout).setOnClickListener {
-            var intent = Intent(baseContext, CustomerSignUp::class.java)
+        var btnCheckout = findViewById<Button>(R.id.btncheckout).setOnClickListener {
+            var intent = Intent(baseContext, DeliveryMethodActivity::class.java)
             startActivity(intent)
         }
         var etProductName= findViewById<TextView>(R.id.etProductName)
@@ -24,16 +24,16 @@ class CustomerCheckout : AppCompatActivity() {
         val img = findViewById<ImageView>(R.id.img)
 
 
-        var nameIntent = intent.getStringExtra("Name")
-        var kilogramIntent = intent.getStringExtra("Kilograms")
-        var priceIntent = intent.getStringExtra("Prices")
-        var imageUrl = intent.getStringExtra("imageUrl")
-        Picasso.get()
-            .load(imageUrl).into(img)
-
-        etProductName.text = nameIntent
-        etKilogram.text  = kilogramIntent
-        etPrice.text = priceIntent
+//        var nameIntent = intent.getStringExtra("Name")
+//        var kilogramIntent = intent.getStringExtra("Kilograms")
+//        var priceIntent = intent.getStringExtra("Prices")
+//        var imageUrl = intent.getStringExtra("imageUrl")
+//        Picasso.get()
+//            .load(imageUrl).into(img)
+//
+//        etProductName.text = nameIntent
+//        etKilogram.text  = kilogramIntent
+//        etPrice.text = priceIntent
 
     }
 }
