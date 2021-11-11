@@ -1,4 +1,4 @@
-package com.example.greenkiosk
+package com.example.greenkiosk.api
 
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
