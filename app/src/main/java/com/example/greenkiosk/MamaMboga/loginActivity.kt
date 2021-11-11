@@ -14,7 +14,7 @@ class loginActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
         var login = findViewById<Button>(R.id.btnCSignUp).setOnClickListener {
-            var intent = Intent(baseContext, MamaMboga_Resetpassword::class.java)
+            var intent = Intent(baseContext,CompleteOrdersActivity::class.java)
             startActivity(intent)
         }
 

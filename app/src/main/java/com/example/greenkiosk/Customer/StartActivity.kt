@@ -1,12 +1,10 @@
 package com.example.greenkiosk.Customer
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
-import com.example.greenkiosk.MamaMboga.MamaMbogaSignUp
-import com.example.greenkiosk.MamaMboga.WorkinghoursActivity
-
+import androidx.appcompat.app.AppCompatActivity
+import com.example.greenkiosk.MamaMboga.AccountMamambogaActivity
 import com.example.greenkiosk.R
 
 class StartActivity : AppCompatActivity() {
@@ -21,7 +19,7 @@ class StartActivity : AppCompatActivity() {
         }
 
         var mamamboga= findViewById<Button>(R.id.btnmama_mboga).setOnClickListener {
-            var intent = Intent(baseContext,WorkinghoursActivity::class.java)
+            var intent = Intent(baseContext,AccountMamambogaActivity::class.java)
             startActivity(intent)
         }
     }
