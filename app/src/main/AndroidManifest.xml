@@ -15,15 +15,17 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.GreenKiosk">
         <activity
+            android:name=".OrdersFragments"
+            android:exported="true" />
+        <activity
             android:name=".MamaMboga.AccountMamambogaActivity"
             android:exported="true" />
-
         <activity
             android:name=".Customer.DeliveryMethodActivity"
             android:exported="true" />
         <activity
-        android:name=".Customer.CategoryActivity"
-        android:exported="true" />
+            android:name=".Customer.CategoryActivity"
+            android:exported="true" />
         <activity
             android:name=".Customer.StartActivity"
             android:exported="true" />
@@ -33,13 +35,10 @@
         <activity
             android:name=".Customer.ProductCategoryActivity"
             android:exported="true" />
-
         <activity
             android:name=".MamaMboga.CompleteOrdersActivity"
             android:exported="true" />
-        <activity
-            android:name=".MamaMboga.loginActivity"/>
-
+        <activity android:name=".MamaMboga.loginActivity" />
         <activity
             android:name=".MamaMboga.SplashScreen"
             android:exported="true">
@@ -52,24 +51,18 @@
         <activity
             android:name=".MamaMboga.WorkinghoursActivity"
             android:exported="true" />
-
         <activity
             android:name=".Customer.CustomerCart"
             android:exported="true" />
         <activity
             android:name=".Customer.CustomerCheckout"
             android:exported="true" />
-
-
         <activity
             android:name=".Customer.CustomerLocation"
             android:exported="true" />
         <activity
             android:name=".MamaMboga.Mamamboga_Location"
             android:exported="true" />
-
-
-
         <activity
             android:name=".MamaMboga.MamaMboga_Resetpassword"
             android:exported="true" />
@@ -82,8 +75,6 @@
         <activity
             android:name=".MamaMboga.Update_Orders_Activity"
             android:exported="true" />
-
-
         <activity
             android:name=".Customer.CustomerVerification"
             android:exported="true" />
@@ -93,6 +84,7 @@
         <activity
             android:name=".Customer.CustomerSignUp"
             android:exported="true" />
+
         <meta-data
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />

@@ -4,6 +4,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
+import com.example.greenkiosk.OrdersFragments
 import com.example.greenkiosk.R
 
 class MamaMboga_Resetpassword : AppCompatActivity() {
@@ -15,7 +16,7 @@ class MamaMboga_Resetpassword : AppCompatActivity() {
 
 
         var password= findViewById<Button>(R.id.btnSubmitPassword).setOnClickListener {
-            var intent = Intent(baseContext,MamaMbogaPending::class.java)
+            var intent = Intent(baseContext,OrdersFragments::class.java)
             startActivity(intent)
         }
     }
