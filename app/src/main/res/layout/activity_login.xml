@@ -8,212 +8,92 @@
     tools:context=".MamaMboga.loginActivity">
 
     <androidx.appcompat.widget.Toolbar
-        android:id="@+id/toolbar"
-        android:layout_width="409dp"
+        android:id="@+id/toolbar2"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:background="#59AF61"
+        android:background="?attr/colorPrimary"
         android:minHeight="?attr/actionBarSize"
         android:theme="?attr/actionBarTheme"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent">
+        <TextView
+            android:id="@+id/tvSignup"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="Log In"
+            android:textAlignment="center"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"/>
+    </androidx.appcompat.widget.Toolbar>
 
-    <TextView
-        android:id="@+id/tvCSignUp"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="120dp"
-        android:layout_marginEnd="120dp"
-        android:fontFamily="More Fonts..."
+    <Button
+        android:id="@+id/btncheck"
+        android:layout_width="313dp"
+        android:layout_height="41dp"
+        android:layout_marginTop="40dp"
+        android:background="#59AF61"
+        android:color="#59AF61"
         android:text="Login"
-        android:textColor="@color/black"
-        android:textSize="24sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="@+id/toolbar"
+        android:textColor="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/etCFirstName"
-        android:layout_width="152dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="40dp"
-        android:layout_marginTop="12dp"
-        app:boxCornerRadiusTopStart="5dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/toolbar">
-
-        <com.google.android.material.textfield.TextInputEditText
-            android:layout_width="152dp"
-            android:layout_height="match_parent"
-            android:background="@drawable/round_shape"
-            android:cursorVisible="true"
-            android:fontFamily="sans-serif"
-            android:hint="FirstName"
-            android:inputType="text|textCapWords"
-            android:textSize="20sp" />
-    </com.google.android.material.textfield.TextInputLayout>
-
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/etCSecondName"
-        android:layout_width="152dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:layout_marginEnd="40dp"
-        app:boxCornerRadiusTopStart="5dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/etCFirstName"
-        app:layout_constraintTop_toTopOf="@+id/etCFirstName">
-
-        <com.google.android.material.textfield.TextInputEditText
-            android:layout_width="152dp"
-            android:layout_height="match_parent"
-            android:background="@drawable/round_shape"
-            android:cursorVisible="true"
-            android:fontFamily="sans-serif"
-            android:hint="Second Name"
-            android:inputType="text|textCapWords"
-            android:textSize="20sp" />
-    </com.google.android.material.textfield.TextInputLayout>
-
-
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/etCPhoneNumber"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="40dp"
-        android:layout_marginTop="24dp"
-        android:layout_marginEnd="40dp"
-        app:boxCornerRadiusTopStart="5dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/etCSecondName">
-
-        <com.google.android.material.textfield.TextInputEditText
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="@drawable/round_shape"
-            android:cursorVisible="true"
-            android:fontFamily="sans-serif"
-            android:hint="Phone Number"
-            android:inputType="number|phone"
-            android:textSize="20sp" />
-    </com.google.android.material.textfield.TextInputLayout>
-
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/etCEmail"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="40dp"
-        android:layout_marginTop="24dp"
-        android:layout_marginEnd="40dp"
-        app:boxCornerRadiusTopStart="5dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/etCPhoneNumber">
-
-        <com.google.android.material.textfield.TextInputEditText
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="@drawable/round_shape"
-            android:cursorVisible="true"
-            android:fontFamily="sans-serif"
-            android:hint="Email"
-            android:inputType="text|textEmailAddress"
-            android:textSize="20sp" />
-    </com.google.android.material.textfield.TextInputLayout>
-
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/etCPassword"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="40dp"
-        android:layout_marginTop="24dp"
-        android:layout_marginEnd="40dp"
-        app:boxCornerRadiusTopStart="5dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/etCEmail">
-
-        <com.google.android.material.textfield.TextInputEditText
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="@drawable/round_shape"
-            android:cursorVisible="true"
-            android:fontFamily="sans-serif"
-            android:hint="Password"
-            android:inputType="numberPassword|textWebPassword"
-            android:textSize="20sp" />
-    </com.google.android.material.textfield.TextInputLayout>
-
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/etCConfirmPassword"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="40dp"
-        android:layout_marginTop="24dp"
-        android:layout_marginEnd="40dp"
-        app:boxCornerRadiusTopStart="5dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/etCPassword">
-
-        <com.google.android.material.textfield.TextInputEditText
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="@drawable/round_shape"
-            android:cursorVisible="true"
-            android:fontFamily="sans-serif"
-            android:hint="Confirm Password"
-            android:inputType="number|text|numberPassword|textWebPassword"
-            android:textSize="20sp" />
-    </com.google.android.material.textfield.TextInputLayout>
-
-    <CheckBox
-        android:id="@+id/checkBoxCustomer"
-        android:layout_width="0dp"
-        android:layout_height="48dp"
-        android:layout_marginStart="60dp"
-        android:layout_marginTop="20dp"
-        android:text="I agree to the Terms and Conditions"
-        android:textSize="16sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/etCConfirmPassword" />
-
-    <Button
-        android:id="@+id/btnCSignUp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="88dp"
-        android:backgroundTint="#43AE60"
-        android:text="Log In"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/etCConfirmPassword" />
+        app:layout_constraintTop_toBottomOf="@+id/etpassword" />
 
     <TextView
-        android:id="@+id/textView21"
+        android:id="@+id/textView15"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="48dp"
-        android:layout_marginTop="18dp"
-        android:fontFamily="sans-serif-light"
-        android:text="Already Have an Account ?"
-        android:textSize="16sp"
+        android:layout_marginStart="192dp"
+        android:layout_marginTop="25dp"
+        android:layout_marginEnd="192dp"
+        android:text="Forgot password ?"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnCSignUp" />
+        app:layout_constraintTop_toBottomOf="@+id/btncheck" />
 
-    <Button
-        android:id="@+id/btnCLogin"
+    <TextView
+        android:id="@+id/tvconfirm"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:backgroundTint="@color/white"
-        android:text="Sign UP"
-        android:textColor="@color/black"
-        app:layout_constraintBottom_toBottomOf="@+id/textView21"
-        app:layout_constraintStart_toEndOf="@+id/textView21"
-        app:layout_constraintTop_toTopOf="@+id/textView21" />
+        android:layout_marginTop="14dp"
+        android:layout_marginBottom="16dp"
+        android:text="Don't have an account? Sign Up"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.488"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btncheck"
+        app:layout_constraintVertical_bias="0.3" />
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/etpassword"
+        android:layout_width="0dp"
+        android:layout_height="47dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="20dp"
+        android:hint="Enter password"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/etphoneNumber" />
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/etphoneNumber"
+        android:layout_width="0dp"
+        android:layout_height="51dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="20dp"
+        android:hint="Enter First and Last Name"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar2" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -13,17 +13,14 @@ class loginActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
-        var login = findViewById<Button>(R.id.btnCSignUp).setOnClickListener {
+        var login = findViewById<Button>(R.id.btncheck).setOnClickListener {
             var intent = Intent(baseContext,MamaMbogaPending::class.java)
             startActivity(intent)
         }
-
-
-
-//        var tvSignUp = findViewById<TextView>(R.id.tvSignup).setOnClickListener {
-//            val intent = Intent(this, MamaMbogaSignUp::class.java)
-//            startActivity(intent)
-//        }
+        var tvSignUp = findViewById<TextView>(R.id.tvconfirm).setOnClickListener {
+            val intent = Intent(this, AccountMamambogaActivity::class.java)
+            startActivity(intent)
+        }
 
 
         }
