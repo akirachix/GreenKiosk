@@ -78,8 +78,8 @@ class CustomerCart :AppCompatActivity(), ProductLoadListener, CartLoadListener {
     private fun countCartfromFireBase(){
         var cartModels : MutableList<CartModel> = ArrayList()
         FirebaseDatabase.getInstance()
-            .getReference("Cart")
-            .child("UNIQUE_USER_ID")
+            .getReference("products")
+//            .child("UNIQUE_USER_ID")
             .addListenerForSingleValueEvent(object : ValueEventListener{
                 override fun onDataChange(snapshot: DataSnapshot) {
                     for (cartSnapshot in snapshot.children){
@@ -111,7 +111,7 @@ class CustomerCart :AppCompatActivity(), ProductLoadListener, CartLoadListener {
 
         val productModels: MutableList<ProductModel> = ArrayList()
         FirebaseDatabase.getInstance()
-            .getReference("Product")
+            .getReference("products")
             .addListenerForSingleValueEvent(object: ValueEventListener{
                 override fun onDataChange(snapshot: DataSnapshot) {
                     if (snapshot.exists()){

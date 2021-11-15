@@ -74,8 +74,8 @@ class MyProductAdapter(
 
             private fun addToCart(productModel: ProductModel) {
                 val  userCart= FirebaseDatabase.getInstance()
-                    .getReference("Cart")
-                    .child("UNIQUE_USER_ID")
+                    .getReference("products")
+//                    .child("UNIQUE_USER_ID")
 
                 userCart.child(productModel.productName!!)
                     .addListenerForSingleValueEvent(object :ValueEventListener{

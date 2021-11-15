@@ -7,6 +7,7 @@ import android.view.View
 import android.widget.Button
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.greenkiosk.Customer.adapter.MyCartAdapter
 import com.example.greenkiosk.Customer.listener.CartLoadListener
 import com.example.greenkiosk.Customer.models.CartModel
 import com.example.greenkiosk.R
@@ -16,7 +17,6 @@ import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ValueEventListener
-import edmt.dev.GreenKioskcart.adapter.MyCartAdapter
 import kotlinx.android.synthetic.main.activity_customer_checkout.*
 import kotlinx.android.synthetic.main.activity_customer_checkout.rvOrders
 import org.greenrobot.eventbus.EventBus
@@ -65,8 +65,8 @@ class CustomerCheckout:AppCompatActivity(), CartLoadListener {
     private fun loadCartFromFirebase(){
         var cartModels : MutableList<CartModel> = ArrayList()
         FirebaseDatabase.getInstance()
-            .getReference("Cart")
-            .child("UNIQUE_USER_ID")
+            .getReference("products")
+//            .child("UNIQUE_USER_ID")
             .addListenerForSingleValueEvent(object: ValueEventListener {
                 override fun onDataChange(snapshot: DataSnapshot) {
                     for ( cartSnapshot in snapshot.children){

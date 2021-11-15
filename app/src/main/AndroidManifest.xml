@@ -51,7 +51,8 @@
             android:exported="true" />
         <activity
             android:name=".Customer.CustomerCart"
-            android:exported="true" />
+            android:exported="true"
+            android:parentActivityName=".Customer.ProductCategoryActivity"/>
         <activity
             android:name=".Customer.CustomerCheckout"
             android:exported="true"
