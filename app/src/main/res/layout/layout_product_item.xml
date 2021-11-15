@@ -16,7 +16,7 @@
             android:id="@+id/productImageView"
             android:layout_width="150dp"
             android:layout_height="150dp"
-            android:src="@drawable/facebook"/>
+            android:src="@drawable/water_melon"/>
         <TextView
             android:id="@+id/txtName"
             android:text="Watermelon"

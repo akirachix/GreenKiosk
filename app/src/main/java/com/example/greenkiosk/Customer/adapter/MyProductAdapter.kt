@@ -13,11 +13,12 @@ import com.example.greenkiosk.Customer.listener.RecyclerViewClickListener
 import com.example.greenkiosk.Customer.models.CartModel
 import com.example.greenkiosk.Customer.models.ProductModel
 import com.example.greenkiosk.R
+import com.example.greenkiosk.eventBus.UpdateCartEvent
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ValueEventListener
-
+import org.greenrobot.eventbus.EventBus
 class MyProductAdapter(
     private val context: Context,
     private val list: List<ProductModel>,
@@ -25,6 +26,7 @@ class MyProductAdapter(
 )
 
 :RecyclerView.Adapter<MyProductAdapter.MyProductViewHolder>(){
+
     class MyProductViewHolder(itemView: View): RecyclerView.ViewHolder(itemView),
         View.OnClickListener {
       var productImageView: ImageView?= null
@@ -88,13 +90,16 @@ class MyProductAdapter(
                                 userCart.child(productModel.image!!)
                                     .updateChildren(updateData)
                                     .addOnSuccessListener {
+                                        EventBus.getDefault().postSticky(UpdateCartEvent())
 
-
-                                        cartListener.onLoadCartFailed("Success add to cart") }
-                                    .addOnFailureListener{ e -> cartListener.onLoadCartFailed(e.message)}
+//                                        cartListener.onLoadCartFailed
+                                        ("Success add to cart") }
+//                                    .addOnFailureListener
+//                                { e -> cartListener.onLoadCartFailed(e.message)}
                             }
+
                             else{
-                                var cartModel = CartModel()
+                                var cartModel = CartModel()  //add to cart if item is not added
                                 cartModel.image= productModel.image
                                 cartModel.productName=productModel.productName
                                 cartModel.kilogram=productModel.kilogram
@@ -105,11 +110,15 @@ class MyProductAdapter(
 
                                 userCart.child(productModel.image!!)
                                     .setValue(cartModel)
+                                    .addOnSuccessListener {
+                                        EventBus.getDefault().postSticky(UpdateCartEvent())
+
+                                    }
 
                             }
                         }
                         override fun onCancelled(error: DatabaseError) {
-                            cartListener.onLoadCartFailed(error.message)
+//                            cartListener.onLoadCartFailed(error.message)
                         }
                     })
             }
@@ -120,3 +129,5 @@ class MyProductAdapter(
     }
 
 }
+
+

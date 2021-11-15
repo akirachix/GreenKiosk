@@ -1,73 +1,55 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Customer.CustomerCheckout">
 
-    <com.google.android.material.bottomnavigation.BottomNavigationView
-        android:id="@+id/nav"
+<!--    <com.google.android.material.bottomnavigation.BottomNavigationView-->
+<!--        android:id="@+id/nav"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        app:layout_constraintBottom_toBottomOf="parent"-->
+<!--        app:layout_constraintLeft_toLeftOf="parent"-->
+<!--        app:layout_constraintLeft_toRightOf="parent"-->
+<!--        android:background="@color/white"-->
+<!--        app:menu="@menu/menu"-->
+<!--        app:itemIconTint="#000000"-->
+<!--        app:itemTextColor="#000000"/>-->
+
+    <LinearLayout
+        android:id="@+id/pane1"
+        android:weightSum="16"
+        android:orientation="horizontal"
+        android:background="#ffffff"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintLeft_toRightOf="parent"
-        android:background="@color/white"
-        app:menu="@menu/menu"
-        app:itemIconTint="#000000"
-        app:itemTextColor="#000000"/>
+        android:layout_height="?android:attr/actionBarSize">
 
-    <ImageView
-        android:id="@+id/img"
-        android:layout_width="152dp"
-        android:layout_height="194dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="84dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/water_melon" />
+        <ImageView
+           android:id="@+id/btnBack"
+           android:layout_weight="2"
+           android:src="@drawable/navigate_before_24"
+           android:layout_width="8dp"
+           android:layout_height="wrap_content"/>
 
-    <Button
-        android:id="@+id/btnchechout"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="100dp"
-        android:layout_marginEnd="16dp"
-        android:backgroundTint="#4CAF50"
-        android:text="Checkout"
-        android:textColor="@color/white"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/img" />
+        <TextView
+            android:id="@+id/txtTotal"
+           android:text="Checkout"
+           android:layout_gravity="start|center_vertical"
+           android:textSize="30dp"
+           android:textStyle="bold"
+           android:gravity="center"
+           android:layout_weight="11"
+           android:layout_width="0dp"
+           android:layout_height="wrap_content"/>
+    </LinearLayout>
 
-    <TextView
-        android:id="@+id/etProductName"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="92dp"
-        android:layout_marginTop="116dp"
-        android:text="Name"
-        app:layout_constraintStart_toEndOf="@+id/img"
-        app:layout_constraintTop_toTopOf="parent" />
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvOrders"
+        android:padding="8dp"
+        android:layout_below="@+id/pane1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
 
-    <TextView
-        android:id="@+id/etKilogram"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="76dp"
-        android:layout_marginTop="5dp"
-        android:text="Kilogram"
-        app:layout_constraintStart_toEndOf="@+id/img"
-        app:layout_constraintTop_toBottomOf="@+id/etProductName" />
-
-    <TextView
-        android:id="@+id/etPrice"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="92dp"
-        android:text="Price"
-        app:layout_constraintStart_toEndOf="@+id/img"
-        app:layout_constraintTop_toBottomOf="@+id/etKilogram" />
-</androidx.constraintlayout.widget.ConstraintLayout>
+</RelativeLayout>
