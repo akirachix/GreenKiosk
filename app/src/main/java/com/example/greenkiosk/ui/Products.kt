@@ -1,4 +1,4 @@
-package com.example.greenkiosk.Customer
+package com.example.greenkiosk.ui
 
 data class Products(
 var name:String,

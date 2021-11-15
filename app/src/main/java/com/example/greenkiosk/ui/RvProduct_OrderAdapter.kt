@@ -1,4 +1,4 @@
-package com.example.greenkiosk.Customer
+package com.example.greenkiosk.ui
 
 import android.content.Context
 import android.content.Intent

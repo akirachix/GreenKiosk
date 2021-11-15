@@ -1,8 +1,7 @@
 package com.example.greenkiosk
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import kotlinx.android.synthetic.main.orderfragments.*
+import androidx.appcompat.app.AppCompatActivity
 
 class OrdersFragments : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -17,19 +16,18 @@ class OrdersFragments : AppCompatActivity() {
             commit()
         }
 
-        btnPending.setOnClickListener {
-            supportFragmentManager.beginTransaction().apply {
-                replace(R.id.flFragments,firstFragment)
-                addToBackStack(null)
-                commit()
-            }
-        }
-        btnCompleted.setOnClickListener {
-            supportFragmentManager.beginTransaction().apply {
-                replace(R.id.flFragments,secondFragment)
-                addToBackStack(null)
-                commit()
-            }
+//        btnPending.setOnClickListener {
+//            supportFragmentManager.beginTransaction().apply {
+//                replace(R.id.flFragments,firstFragment)
+//                addToBackStack(null)
+//                commit()
+//            }
+//        }
+//        btnCompleted.setOnClickListener {
+//            supportFragmentManager.beginTransaction().apply {
+//                replace(R.id.flFragments,secondFragment)
+//                addToBackStack(null)
+//                commit()
+//            }
         }
     }
-}

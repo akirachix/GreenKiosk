@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MamaMboga.AccountMamambogaActivity">
+    tools:context=".ui.AccountMamambogaActivity">
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar2"
@@ -37,7 +37,7 @@
         android:layout_marginStart="20dp"
         android:layout_marginTop="20dp"
         android:text="Name"
-        app:layout_constraintBottom_toTopOf="@+id/tilname"
+        app:layout_constraintBottom_toTopOf="@+id/etname"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/toolbar2" />
 
@@ -52,10 +52,10 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tilname" />
+        app:layout_constraintTop_toBottomOf="@+id/etname" />
 
     <com.google.android.material.textfield.TextInputEditText
-        android:id="@+id/tilname"
+        android:id="@+id/etname"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="15dp"
@@ -77,10 +77,10 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tilphone" />
+        app:layout_constraintTop_toBottomOf="@+id/etphone" />
 
     <com.google.android.material.textfield.TextInputEditText
-        android:id="@+id/tilphone"
+        android:id="@+id/etphone"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="15dp"
@@ -101,7 +101,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.002"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tilemail" />
+        app:layout_constraintTop_toBottomOf="@+id/etEmaill" />
 
     <TextView
         android:id="@+id/tvsetpsword"
@@ -114,7 +114,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tilpassword" />
+        app:layout_constraintTop_toBottomOf="@+id/etPassword" />
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/textInputLayout2"
@@ -124,12 +124,12 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintStart_toEndOf="@+id/tvPassword"
-            app:layout_constraintTop_toBottomOf="@+id/tilemail">
+            app:layout_constraintTop_toBottomOf="@+id/etEmaill">
 
         </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputEditText
-        android:id="@+id/tilemail"
+        android:id="@+id/etEmaill"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="15dp"
@@ -141,7 +141,7 @@
         app:layout_constraintTop_toBottomOf="@+id/tvEmail" />
 
     <com.google.android.material.textfield.TextInputEditText
-        android:id="@+id/tilset"
+        android:id="@+id/etset"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="15dp"
@@ -176,10 +176,10 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.882"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tilset" />
+        app:layout_constraintTop_toBottomOf="@+id/etset" />
 
     <com.google.android.material.textfield.TextInputEditText
-        android:id="@+id/tilpassword"
+        android:id="@+id/etPassword"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="15dp"
@@ -196,7 +196,7 @@
         android:layout_marginTop="20dp"
         android:visibility="invisible"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tilset"
+        app:layout_constraintTop_toBottomOf="@+id/etset"
         app:srcCompat="@drawable/google" />
 
     <ImageView

@@ -1,4 +1,4 @@
-package com.example.greenkiosk.MamaMboga
+package com.example.greenkiosk.ui
 
 import android.content.Intent
 import android.os.Bundle
@@ -12,7 +12,7 @@ class MamaMbogaVerificationCode : AppCompatActivity() {
         setContentView(R.layout.activity_mama_mboga_verification_code)
 
         var verify = findViewById<Button>(R.id.btnverify).setOnClickListener {
-            var intent = Intent(baseContext, loginActivity::class.java)
+            var intent = Intent(baseContext, LoginActivity::class.java)
             startActivity(intent)
         }
     }

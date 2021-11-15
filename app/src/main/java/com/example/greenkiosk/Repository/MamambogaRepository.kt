@@ -10,7 +10,7 @@ import retrofit2.Response
 
 class MamambogaRepository {
 
-   val apiInterface = ApiClient.buildApiClient(ApiInterface::class.java)
+   var apiInterface = ApiClient.buildApiClient(ApiInterface::class.java)
     suspend fun signupMamamboga(MamambogaSignupRequest: MamambogaSignupRequest):
             Response<MamambogaSignupResponse> =
        withContext(Dispatchers.IO) {

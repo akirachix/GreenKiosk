@@ -15,32 +15,35 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.GreenKiosk">
         <activity
+            android:name=".PaymentActivity"
+            android:exported="true" />
+        <activity
             android:name=".OrdersFragments"
             android:exported="true" />
         <activity
-            android:name=".MamaMboga.AccountMamambogaActivity"
+            android:name=".ui.AccountMamambogaActivity"
             android:exported="true" />
         <activity
-            android:name=".Customer.DeliveryMethodActivity"
+            android:name=".ui.DeliveryMethodActivity"
             android:exported="true" />
         <activity
-            android:name=".Customer.CategoryActivity"
+            android:name=".ui.CategoryActivity"
             android:exported="true" />
         <activity
-            android:name=".Customer.StartActivity"
+            android:name=".ui.StartActivity"
             android:exported="true" />
         <activity
-            android:name=".Customer.PaymentMethodActivity"
+            android:name=".ui.PaymentMethodActivity"
             android:exported="true" />
         <activity
-            android:name=".Customer.ProductCategoryActivity"
+            android:name=".ui.ProductCategoryActivity"
             android:exported="true" />
         <activity
-            android:name=".MamaMboga.CompleteOrdersActivity"
+            android:name=".ui.CompleteOrdersActivity"
             android:exported="true" />
-        <activity android:name=".MamaMboga.loginActivity" />
+        <activity android:name=".ui.LoginActivity" />
         <activity
-            android:name=".MamaMboga.SplashScreen"
+            android:name=".ui.SplashScreen"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -49,40 +52,40 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".MamaMboga.WorkinghoursActivity"
+            android:name=".ui.WorkinghoursActivity"
             android:exported="true" />
         <activity
-            android:name=".Customer.CustomerCart"
+            android:name=".ui.CustomerCart"
             android:exported="true" />
         <activity
-            android:name=".Customer.CustomerCheckout"
+            android:name=".ui.CustomerCheckout"
             android:exported="true" />
         <activity
-            android:name=".Customer.CustomerLocation"
+            android:name=".ui.CustomerLocation"
             android:exported="true" />
         <activity
-            android:name=".MamaMboga.Mamamboga_Location"
+            android:name=".ui.Mamamboga_Location"
             android:exported="true" />
         <activity
-            android:name=".MamaMboga.MamaMboga_Resetpassword"
+            android:name=".ui.MamaMboga_Resetpassword"
             android:exported="true" />
         <activity
-            android:name=".MamaMboga.MamaMbogaPending"
+            android:name=".ui.MamaMbogaPending"
             android:exported="true" />
         <activity
-            android:name=".MamaMboga.MamaMbogaVerificationCode"
+            android:name=".ui.MamaMbogaVerificationCode"
             android:exported="true" />
         <activity
-            android:name=".MamaMboga.Update_Orders_Activity"
+            android:name=".ui.Update_Orders_Activity"
             android:exported="true" />
         <activity
-            android:name=".Customer.CustomerVerification"
+            android:name=".ui.CustomerVerification"
             android:exported="true" />
         <activity
-            android:name=".Customer.CustomerLogIn"
+            android:name=".ui.CustomerLogIn"
             android:exported="true" />
         <activity
-            android:name=".Customer.CustomerSignUp"
+            android:name=".ui.CustomerSignUp"
             android:exported="true" />
 
         <meta-data

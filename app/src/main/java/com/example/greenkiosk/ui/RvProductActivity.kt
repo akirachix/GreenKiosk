@@ -1,4 +1,4 @@
-package com.example.greenkiosk.Customer
+package com.example.greenkiosk.ui
 
 import android.content.Context
 import android.content.Intent
@@ -12,7 +12,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.greenkiosk.R
 import com.squareup.picasso.Picasso
 
-class RvProductActivity(var productList: List<Products>,var context: Context): RecyclerView.Adapter<ProductViewHolder>() {
+class RvProductActivity(var productList: List<Products>, var context: Context): RecyclerView.Adapter<ProductViewHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ProductViewHolder {
         var productItem =
             LayoutInflater.from(parent.context).inflate(R.layout.products_item_list, parent, false)
@@ -28,7 +28,7 @@ class RvProductActivity(var productList: List<Products>,var context: Context): R
             .into(holder.img)
 
         holder.card.setOnClickListener {
-            var intent= Intent(context,CustomerCart::class.java)
+            var intent= Intent(context, CustomerCart::class.java)
             intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
             context.startActivity(intent)
 

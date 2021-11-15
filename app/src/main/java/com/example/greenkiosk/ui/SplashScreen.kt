@@ -1,14 +1,9 @@
-package com.example.greenkiosk.MamaMboga
+package com.example.greenkiosk.ui
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
-import android.widget.Button
-import com.example.greenkiosk.Customer.Categories
-import com.example.greenkiosk.Customer.CategoryActivity
-import com.example.greenkiosk.Customer.CustomerLocation
-import com.example.greenkiosk.Customer.StartActivity
 import com.example.greenkiosk.R
 
 class SplashScreen : AppCompatActivity() {

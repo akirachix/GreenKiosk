@@ -1,11 +1,9 @@
-package com.example.greenkiosk.Customer
+package com.example.greenkiosk.ui
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
-import com.example.greenkiosk.MamaMboga.AccountMamambogaActivity
-import com.example.greenkiosk.MamaMboga.WorkinghoursActivity
 
 import com.example.greenkiosk.R
 
@@ -16,7 +14,7 @@ class StartActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_start)
         var customer = findViewById<Button>(R.id.btncustomer).setOnClickListener {
-            var intent = Intent(baseContext,CategoryActivity::class.java)
+            var intent = Intent(baseContext, CategoryActivity::class.java)
             startActivity(intent)
         }
 

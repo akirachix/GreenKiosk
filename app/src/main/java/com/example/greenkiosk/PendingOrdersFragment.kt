@@ -1,10 +1,6 @@
 package com.example.greenkiosk
 
-import android.content.Intent
 import androidx.fragment.app.Fragment
-import android.widget.Button
-import com.example.greenkiosk.MamaMboga.CompleteOrdersActivity
-import com.example.greenkiosk.R
 
 
 // TODO: Rename parameter arguments, choose names that match

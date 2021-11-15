@@ -8,7 +8,12 @@ object ApiClient {
         .baseUrl("https://mamamboga-greenkiosk.herokuapp.com/")
         .addConverterFactory(GsonConverterFactory.create())
         .build()
+
     fun <T> buildApiClient(apiInterface: Class<T>): T {
         return retrofit.create(apiInterface)
+
+
+
+
     }
 }

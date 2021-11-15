@@ -1,4 +1,4 @@
-package com.example.greenkiosk.Customer
+package com.example.greenkiosk.ui
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
