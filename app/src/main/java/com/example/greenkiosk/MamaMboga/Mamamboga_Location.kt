@@ -5,15 +5,27 @@ import android.R
 import android.content.Intent
 import android.content.pm.PackageManager
 import android.os.Bundle
+import android.os.Handler
 import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
+import com.example.greenkiosk.Customer.StartActivity
+import com.example.greenkiosk.OrdersFragments
 
 class Mamamboga_Location : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_list_item)
+        supportActionBar?.hide()
+
+        Handler().postDelayed({
+            val intent = Intent(this@Mamamboga_Location, OrdersFragments::class.java)
+            startActivity(intent)
+            finish()
+        }, 2500)
+
+
 
         requestLocationPermission()
         //
@@ -34,7 +46,10 @@ class Mamamboga_Location : AppCompatActivity() {
             ) == PackageManager.PERMISSION_GRANTED
             if (background) {
                 handleLocationUpdates()
-            } else {
+                val intent = Intent(baseContext,OrdersFragments::class.java)
+                startActivity(intent)
+            }
+            else {
                 ActivityCompat.requestPermissions(
                     this,
                     arrayOf(Manifest.permission.ACCESS_BACKGROUND_LOCATION),
@@ -70,7 +85,7 @@ class Mamamboga_Location : AppCompatActivity() {
                     //foreground permission allowed
                     if (grantResults[i] >= 0) {
                         foreground = true
-                        startActivity(Intent(baseContext, MamaMbogaVerificationCode::class.java))
+                        startActivity(Intent(baseContext, OrdersFragments::class.java))
 
                     } else {
                         Toast.makeText(
