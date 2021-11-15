@@ -4,9 +4,11 @@ import com.example.greenkiosk.Models.*
 import retrofit2.http.Body
 import retrofit2.http.POST
 
+
+
 interface ApiInterface {
-    @POST("/login//")
-    suspend fun loginCustomer(@Body loginRequest:CustomerLoginRequest):retrofit2.Response<CustomerLoginResponse>
+    @POST("/customer//")
+    suspend fun signupcustomer(@Body signupRequest:SignupRequest):retrofit2.Response<SignupResponse>
     @POST("/customer/signup")
     suspend fun signupCustomer(@Body signupRequest:SignupRequest):retrofit2.Response<SignupResponse>
     @POST("/mamaMboga/signup")
@@ -17,4 +19,7 @@ interface ApiInterface {
     suspend fun orders(@Body ordersRequest: OrdersRequest):retrofit2.Response<OrdersResponse>
     @POST("/categories")
     suspend fun categories(@Body categoriesRequest: CategoriesRequest):retrofit2.Response<CategoriesResponse>
+    @POST("/customer/payments")
+    suspend fun payment(@Body paymentRequest: PaymentRequest):retrofit2.Response<PaymentResponse>
+
 }
