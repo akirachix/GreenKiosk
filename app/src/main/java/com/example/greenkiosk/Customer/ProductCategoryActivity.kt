@@ -47,7 +47,7 @@ class ProductCategoryActivity : AppCompatActivity() {
             rvproducts.adapter = productAdapter
         }
         else{
-            Toast.makeText(baseContext,"" , Toast.LENGTH_LONG).show()
+//            Toast.makeText(baseContext,"" , Toast.LENGTH_LONG).show()
         }
     }
 }

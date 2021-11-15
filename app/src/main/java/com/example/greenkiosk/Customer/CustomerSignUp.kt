@@ -20,17 +20,7 @@ class CustomerSignUp: AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_customer_sign_up)
         details()
-
-        var signup = findViewById<Button>(R.id.btnCustomerSignUp).setOnClickListener {
-            val intent = Intent(baseContext, CustomerVerification::class.java)
-            startActivity(intent)
-        }
-        var tvCustomerLogin = findViewById<TextView>(R.id.tvCustomerLogin).setOnClickListener {
-            val intent = Intent(this, CategoryActivity::class.java)
-            startActivity(intent)
-        }
     }
-
     fun details() {
         CustomerFirstName = findViewById(R.id.etCustomerFirstName)
         CustomerSecondName = findViewById(R.id.etCustomerSecondName)
@@ -40,43 +30,32 @@ class CustomerSignUp: AppCompatActivity() {
         checkBoxCustomer = findViewById(R.id.checkBoxCustomer)
         btnCustomerSignUp = findViewById(R.id.btnCustomerSignUp)
         tvCustomerLogin = findViewById(R.id.tvCustomerLogin)
+        validateDetails()
     }
-    fun validateDetails(): Any {
-        if (CustomerFirstName.text.toString().equals("")) {
-            CustomerFirstName.setError("Please Enter First Name")
-            return false
+
+    fun validateDetails() {
+        var signup = findViewById<Button>(R.id.btnCustomerSignUp).setOnClickListener {
+            if (CustomerFirstName.text.toString().isEmpty() || CustomerSecondName.text.toString().isEmpty() || CustomerEmail.text.toString().isEmpty()
+                || CustomerPassword.text.toString(). isEmpty() || CustomerConfirmPassword.text.toString().isEmpty() || CustomerConfirmPassword.text.toString().isEmpty()
+                || CustomerPassword.text.length < 8 || CustomerPassword.text.toString() !== (CustomerConfirmPassword.text.toString()) || checkBoxCustomer.toString().isEmpty()
+            ) {
+                CustomerFirstName.error = "Please Enter First Name"
+                CustomerSecondName.error = "Please Enter Second Name"
+                CustomerEmail.error = "Please Enter Email"
+                CustomerPassword.error = "Please Enter Password"
+                CustomerConfirmPassword.error = "Please Confirm Password"
+                CustomerPassword.error = "Password Length must be more than " + 8 + "characters"
+                CustomerConfirmPassword.error = "Password does not match"
+                checkBoxCustomer.error = "Click the Check Box"
+            }
+            else {
+                val intent = Intent(baseContext, CustomerVerification::class.java)
+                startActivity(intent)
+            }
         }
-        if (CustomerSecondName.text.toString().equals("")) {
-            CustomerSecondName.setError("Please Enter Second Name")
-            return false
-        }
-        if (CustomerEmail.text.toString().equals("")) {
-            CustomerEmail.setError("Please Enter Email Name")
-            return false
-        }
-        if (CustomerPassword.text.toString().equals("")) {
-            CustomerPassword.setError("Please Enter Password")
-            return false
-        }
-        if (CustomerConfirmPassword.text.toString().equals("")) {
-            CustomerConfirmPassword.setError("Please Confirm Password")
-            return false
-        }
-        // checking minimum password Length
-        if (CustomerPassword.text.length < 8) {
-            CustomerPassword.setError("Password Length must be more than " + 8 + "characters")
-            return false
-        }
-        // Checking if repeat password is same
-        if (!CustomerPassword.text.toString().equals(CustomerConfirmPassword.text.toString())) {
-            CustomerConfirmPassword.setError("Password does not match")
-            return false
-        }
-        return if (checkBoxCustomer.isChecked()) {
-            checkBoxCustomer.setChecked(false);
-        } else btnCustomerSignUp.setOnClickListener {
-            Toast.makeText(this, "Account Created Successfully", Toast.LENGTH_SHORT).show()
-            val intent = Intent(this, CustomerPassword::class.java)
+        var tvCustomerLogin = findViewById<Button>(R.id.btnCustomerSignUp).setOnClickListener {
+            val intent = Intent(this, CategoryActivity::class.java)
+            startActivity(intent)
         }
     }
 }
