@@ -2,9 +2,12 @@ package com.example.greenkiosk
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.navigation.NavController
+import androidx.navigation.Navigation.*
+import androidx.navigation.ui.NavigationUI
 import kotlinx.android.synthetic.main.orderfragments.*
 
-class OrdersFragments : AppCompatActivity() {
+class Orders : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.orderfragments)
@@ -12,24 +15,29 @@ class OrdersFragments : AppCompatActivity() {
         val firstFragment = PendingOrdersFragment()
         val secondFragment = CompletedOrdersFragment()
 
+
         supportFragmentManager.beginTransaction().apply {
-            replace(R.id.flFragments,firstFragment)
+            replace(R.id.flFragments , firstFragment)
             commit()
         }
 
         btnPending.setOnClickListener {
             supportFragmentManager.beginTransaction().apply {
-                replace(R.id.flFragments,firstFragment)
+                replace(R.id.flFragments , firstFragment)
                 addToBackStack(null)
                 commit()
             }
         }
         btnCompleted.setOnClickListener {
             supportFragmentManager.beginTransaction().apply {
-                replace(R.id.flFragments,secondFragment)
+                replace(R.id.flFragments , secondFragment)
                 addToBackStack(null)
                 commit()
             }
         }
+        val navController: NavController
+        findNavController(this@Orders, R.id.flFragments)
+            .also { navController = it }
+        NavigationUI.setupWithNavController(bottomNavigation , navController)
     }
 }

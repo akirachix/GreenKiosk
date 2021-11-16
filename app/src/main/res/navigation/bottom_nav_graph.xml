@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mynav"
+    app:startDestination="@id/pendingOrdersFragment">
+
+    <fragment
+        android:id="@+id/updateFragment"
+        android:name="com.example.greenkiosk.UpdateFragment"
+        android:label="fragment_update"
+        tools:layout="@layout/fragment_update" />
+    <fragment
+        android:id="@+id/notificationFragment"
+        android:name="com.example.greenkiosk.NotificationFragment"
+        android:label="fragment_notification"
+        tools:layout="@layout/fragment_notification" />
+    <fragment
+        android:id="@+id/pendingOrdersFragment"
+        android:name="com.example.greenkiosk.PendingOrdersFragment"
+        android:label="fragment_pending_orders"
+        tools:layout="@layout/fragment_pending_orders" />
+</navigation>

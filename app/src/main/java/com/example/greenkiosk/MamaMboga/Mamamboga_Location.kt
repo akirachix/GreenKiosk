@@ -7,29 +7,27 @@ import android.content.pm.PackageManager
 import android.os.Bundle
 import android.os.Handler
 import android.view.View
+import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
-import com.example.greenkiosk.Customer.StartActivity
-import com.example.greenkiosk.OrdersFragments
+import com.example.greenkiosk.Orders
 
 class Mamamboga_Location : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_list_item)
         supportActionBar?.hide()
-
         Handler().postDelayed({
-            val intent = Intent(this@Mamamboga_Location, OrdersFragments::class.java)
+            val intent = Intent(this@Mamamboga_Location, Orders::class.java)
             startActivity(intent)
-            finish()
         }, 2500)
 
 
 
         requestLocationPermission()
         //
-        fun onClick(v: View?) {
+        fun onClick(view: View) {
             requestLocationPermission()
         }
     }
@@ -46,7 +44,7 @@ class Mamamboga_Location : AppCompatActivity() {
             ) == PackageManager.PERMISSION_GRANTED
             if (background) {
                 handleLocationUpdates()
-                val intent = Intent(baseContext,OrdersFragments::class.java)
+                val intent = Intent(baseContext,Orders::class.java)
                 startActivity(intent)
             }
             else {
@@ -85,7 +83,7 @@ class Mamamboga_Location : AppCompatActivity() {
                     //foreground permission allowed
                     if (grantResults[i] >= 0) {
                         foreground = true
-                        startActivity(Intent(baseContext, OrdersFragments::class.java))
+                        startActivity(Intent(baseContext, Orders::class.java))
 
                     } else {
                         Toast.makeText(
@@ -104,7 +102,7 @@ class Mamamboga_Location : AppCompatActivity() {
                     if (grantResults[i] >= 0) {
                         foreground = true
                         background = true
-//                        startActivity(Intent(baseContext, CustomerCheckout::class.java))
+                        startActivity(Intent(baseContext, Orders ::class.java))
 
                     } else {
                         Toast.makeText(

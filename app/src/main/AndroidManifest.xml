@@ -15,7 +15,13 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.GreenKiosk">
         <activity
-            android:name=".OrdersFragments"
+            android:name=".MainFragment"
+            android:exported="true" />
+        <activity
+            android:name=".OrderFragment"
+            android:exported="true" />
+        <activity
+            android:name=".Orders"
             android:exported="true" />
         <activity
             android:name=".MamaMboga.AccountMamambogaActivity"
