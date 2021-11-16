@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/notificationFragment"
+        android:icon="@drawable/ic_baseline_add_24"
+        android:title="Update"
+        app:showsAsAction="always"/>
+
+    <item
+        android:id="@+id/ordersFragment"
+        android:icon="@drawable/ic_baseline_shopping_cart_24"
+        android:title="Pending Orders"
+        app:showsAsAction="always"/>
+
+    <item
+        android:id="@+id/updateFragment"
+        android:icon="@drawable/ic_baseline_check_24"
+        android:title="Completed Orders"
+        app:showsAsAction="always"/>
+
+</menu>

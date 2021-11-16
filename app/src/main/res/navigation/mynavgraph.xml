@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mynavgraph"
+    app:startDestination="@id/updateOrders">
+    <fragment
+        android:id="@+id/pendingOrder"
+        android:name="com.example.greenkiosk.PendingOrder"
+        android:label="fragment_pending_order"
+        tools:layout="@layout/fragment_pending_order" >
+        <action
+            android:id="@+id/action_pendingOrder_to_completeOrders"
+            app:destination="@id/completeOrders" />
+    </fragment>
+    <fragment
+        android:id="@+id/completeOrders"
+        android:name="com.example.greenkiosk.CompleteOrders"
+        android:label="fragment_complete_orders"
+        tools:layout="@layout/fragment_complete_orders" />
+    <fragment
+        android:id="@+id/updateOrders"
+        android:name="com.example.greenkiosk.UpdateOrders"
+        android:label="fragment_update_orders"
+        tools:layout="@layout/fragment_update_orders" >
+        <action
+            android:id="@+id/action_updateOrders_to_pendingOrder2"
+            app:destination="@id/pendingOrder" />
+    </fragment>
+
+</navigation>

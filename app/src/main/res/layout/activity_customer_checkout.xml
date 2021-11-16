@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Customer.CustomerCheckout">
+    tools:context=".ui.CustomerCheckout">
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/nav"
@@ -14,7 +14,7 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintLeft_toRightOf="parent"
         android:background="@color/white"
-        app:menu="@menu/bottom_nav_menu"
+        app:menu="@menu/navigation_items"
         app:itemIconTint="#000000"
         app:itemTextColor="#000000"/>
 

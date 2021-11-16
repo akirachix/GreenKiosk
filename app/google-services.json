@@ -1,33 +1,33 @@
 {
   "project_info": {
-    "project_number": "1035676444509",
-    "project_id": "green-kiosk",
-    "storage_bucket": "green-kiosk.appspot.com"
+    "project_number": "803157806105",
+    "project_id": "kiosk-ac733",
+    "storage_bucket": "kiosk-ac733.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:1035676444509:android:34b5391c681c3ad1e7eab4",
+        "mobilesdk_app_id": "1:803157806105:android:8130d8cc2b6cb307c76e88",
         "android_client_info": {
           "package_name": "com.example.greenkiosk"
         }
       },
       "oauth_client": [
         {
-          "client_id": "1035676444509-1u6d3amejsjpnrvkqr6idpubgdnbsf6a.apps.googleusercontent.com",
+          "client_id": "803157806105-29o7cjc7irasop2rvtmqn53hcok4j3e4.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyCilvTGVnRZz48Q5gvSKvtl9Tb_r4CLHec"
+          "current_key": "AIzaSyChTQIrdGjIl-7RlRtOTSKAjZOOb624Vfg"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "1035676444509-1u6d3amejsjpnrvkqr6idpubgdnbsf6a.apps.googleusercontent.com",
+              "client_id": "803157806105-29o7cjc7irasop2rvtmqn53hcok4j3e4.apps.googleusercontent.com",
               "client_type": 3
             }
           ]

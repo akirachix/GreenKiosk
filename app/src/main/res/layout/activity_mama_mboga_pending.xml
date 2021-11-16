@@ -13,7 +13,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintLeft_toRightOf="parent"
-        app:menu="@menu/bottom_nav_menu"
+        app:menu="@menu/navigation_items"
         android:background="@color/white"
         app:itemIconTint="#000000"
         app:itemTextColor="#000000"/>
@@ -85,7 +85,7 @@
         app:layout_constraintTop_toBottomOf="@+id/textView10" />
 
     <Button
-        android:id="@+id/btnCompleted"
+        android:id="@+id/btnCompletedOrders"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"

@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+
+  <TextView
+      android:id="@+id/tvPaymentmethod"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_marginStart="117dp"
+      android:layout_marginTop="39dp"
+      android:text="Payment Method"
+      android:textSize="24sp"
+      android:textStyle="bold"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toTopOf="parent" />
+
+  <TextView
+      android:id="@+id/tvphone"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_marginStart="50dp"
+      android:layout_marginTop="49dp"
+      android:layout_marginEnd="272dp"
+      android:text="phoneNumber"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toBottomOf="@+id/tvPaymentmethod" />
+
+  <com.google.android.material.textfield.TextInputEditText
+      android:id="@+id/textInputEditText"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_marginStart="30dp"
+      android:layout_marginTop="24dp"
+      android:layout_marginEnd="30dp"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintHorizontal_bias="0.0"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toBottomOf="@+id/tvphone" />
+
+  <TextView
+      android:id="@+id/tvamount"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_marginStart="48dp"
+      android:layout_marginTop="40dp"
+      android:layout_marginEnd="278dp"
+      android:text="Enter Amount"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintHorizontal_bias="0.0"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toBottomOf="@+id/textInputEditText" />
+
+  <com.google.android.material.textfield.TextInputEditText
+      android:id="@+id/textInputEditText2"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_marginStart="30dp"
+      android:layout_marginTop="30dp"
+      android:layout_marginEnd="30dp"
+      android:hint="hint"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintHorizontal_bias="0.0"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toBottomOf="@+id/tvamount" />
+
+  <TextView
+      android:id="@+id/tvsub"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_marginStart="30dp"
+      android:layout_marginTop="56dp"
+      android:text="Sub Total"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toBottomOf="@+id/textInputEditText2" />
+
+  <TextView
+      android:id="@+id/tvkes"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_marginEnd="28dp"
+      android:text="KES 20.50"
+      app:layout_constraintBottom_toBottomOf="@+id/tvsub"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintTop_toTopOf="@+id/tvsub"
+      app:layout_constraintVertical_bias="0.0" />
+
+  <TextView
+      android:id="@+id/tvcost"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_marginStart="30dp"
+      android:layout_marginTop="55dp"
+      android:text="Shipping Cost"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toBottomOf="@+id/tvsub" />
+
+  <TextView
+      android:id="@+id/tvcas"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_marginEnd="30dp"
+      android:text="KES 28.50"
+      app:layout_constraintBottom_toBottomOf="@+id/tvcost"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintTop_toTopOf="@+id/tvcost" />
+
+  <TextView
+      android:id="@+id/tvtax"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_marginStart="30dp"
+      android:layout_marginTop="46dp"
+      android:text="Tax"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toBottomOf="@+id/tvcost" />
+
+  <TextView
+      android:id="@+id/tvkash"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_marginEnd="30dp"
+      android:text="KES 50.00"
+      app:layout_constraintBottom_toBottomOf="@+id/tvtax"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintTop_toTopOf="@+id/tvtax" />
+
+  <com.google.android.material.textfield.TextInputEditText
+      android:id="@+id/textInputEditText3"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_marginTop="3dp"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintHorizontal_bias="0.0"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toBottomOf="@+id/tvtax" />
+
+  <TextView
+      android:id="@+id/tvtotal"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_marginStart="30dp"
+      android:layout_marginTop="2dp"
+      android:text="TOTAL"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toBottomOf="@+id/textInputEditText3" />
+
+  <TextView
+      android:id="@+id/tvmoney"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_marginEnd="30dp"
+      android:text="KES 6.32"
+      app:layout_constraintBottom_toBottomOf="@+id/tvtotal"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintTop_toTopOf="@+id/tvtotal" />
+
+  <Button
+      android:id="@+id/btnok"
+      android:layout_width="311dp"
+      android:layout_height="55dp"
+      android:layout_marginStart="32dp"
+      android:layout_marginTop="32dp"
+      android:layout_marginEnd="32dp"
+      android:layout_marginBottom="16dp"
+      android:text="OK"
+      app:layout_constraintBottom_toBottomOf="parent"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintHorizontal_bias="0.699"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toBottomOf="@+id/tvtotal" />
+</androidx.constraintlayout.widget.ConstraintLayout>
