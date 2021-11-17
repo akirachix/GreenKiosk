@@ -26,13 +26,15 @@
             android:parentActivityName=".Customer.StartActivity"/>
         <activity
             android:name=".Customer.StartActivity"
-            android:exported="true" />
+            android:exported="true"
+            android:parentActivityName=".Customer.StartActivity"/>
         <activity
             android:name=".Customer.PaymentMethodActivity"
             android:exported="true" />
         <activity
             android:name=".Customer.ProductCategoryActivity"
-            android:exported="true" />
+            android:exported="true"
+            android:parentActivityName=".Customer.CategoryActivity"/>
         <activity
             android:name=".MamaMboga.CompleteOrdersActivity"
             android:exported="true" />

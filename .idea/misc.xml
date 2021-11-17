@@ -19,8 +19,8 @@
         <entry key="app/src/main/res/drawable/navigate_before_24.xml" value="0.1" />
         <entry key="app/src/main/res/layout/activity_account_mamamboga.xml" value="0.13333333333333333" />
         <entry key="app/src/main/res/layout/activity_complete_orders.xml" value="0.1578125" />
-        <entry key="app/src/main/res/layout/activity_customer_cart.xml" value="0.25" />
-        <entry key="app/src/main/res/layout/activity_customer_checkout.xml" value="0.22" />
+        <entry key="app/src/main/res/layout/activity_customer_cart.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/activity_customer_checkout.xml" value="0.1" />
         <entry key="app/src/main/res/layout/activity_customer_kiosk_categories.xml" value="0.1" />
         <entry key="app/src/main/res/layout/activity_customer_location.xml" value="0.1578125" />
         <entry key="app/src/main/res/layout/activity_customer_log_in.xml" value="0.1" />
@@ -41,8 +41,8 @@
         <entry key="app/src/main/res/layout/activity_update_orders.xml" value="0.1" />
         <entry key="app/src/main/res/layout/activity_workinghours.xml" value="0.1" />
         <entry key="app/src/main/res/layout/categories_items_list.xml" value="0.1578125" />
-        <entry key="app/src/main/res/layout/layout_cart_item.xml" value="0.25" />
-        <entry key="app/src/main/res/layout/layout_product_item.xml" value="0.22" />
+        <entry key="app/src/main/res/layout/layout_cart_item.xml" value="0.33" />
+        <entry key="app/src/main/res/layout/layout_product_item.xml" value="0.25" />
         <entry key="app/src/main/res/layout/products_item_list.xml" value="0.1578125" />
         <entry key="app/src/main/res/menu/menu.xml" value="0.1" />
         <entry key="app/src/main/res/menu/menu1.xml" value="0.33" />

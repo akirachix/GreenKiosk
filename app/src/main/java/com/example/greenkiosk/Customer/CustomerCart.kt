@@ -1,161 +1,78 @@
 package com.example.greenkiosk.Customer
 
+import android.content.Intent
 import android.os.Bundle
-import android.view.View
+import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.GridLayoutManager
-import com.example.greenkiosk.Customer.adapter.MyProductAdapter
-import com.example.greenkiosk.Customer.listener.CartLoadListener
-import com.example.greenkiosk.Customer.listener.ProductLoadListener
-import com.example.greenkiosk.Customer.models.CartModel
-import com.example.greenkiosk.Customer.models.ProductModel
-import com.example.greenkiosk.Customer.utils.SpaceItemDecoration
 import com.example.greenkiosk.R
-import com.example.greenkiosk.eventBus.UpdateCartEvent
-import com.google.android.material.snackbar.Snackbar
-import com.google.firebase.database.DataSnapshot
-import com.google.firebase.database.DatabaseError
-import com.google.firebase.database.FirebaseDatabase
-import com.google.firebase.database.ValueEventListener
-import kotlinx.android.synthetic.main.activity_customer_cart.*
-import org.greenrobot.eventbus.EventBus
-import org.greenrobot.eventbus.Subscribe
-import org.greenrobot.eventbus.ThreadMode
-import java.util.ArrayList
-
-class CustomerCart :AppCompatActivity(), ProductLoadListener, CartLoadListener {
-
-    lateinit var productLoadListener: ProductLoadListener
-    lateinit var cartLoadListener: CartLoadListener
-
-    override fun onStart() {
-        super.onStart()
-        EventBus.getDefault().register(this)
-    }
-
-    override fun onStop() {
-        super.onStop()
-        if (EventBus.getDefault().hasSubscriberForEvent(UpdateCartEvent::class.java))
-            EventBus.getDefault().removeStickyEvent((UpdateCartEvent::class.java))
-        EventBus.getDefault().unregister(this)
-
-    }
-
-    @Subscribe(threadMode = ThreadMode.MAIN, sticky = true)
-    public fun OnUpdateCartEvent(event: UpdateCartEvent){
-
-        countCartfromFireBase()
-    }
+import com.example.greenkiosk.databinding.ActivityCustomerCartBinding
+import com.google.gson.Gson
+import kotlinx.android.synthetic.main.layout_product_item.*
 
 
-//    lateinit var binding: ActivityCustomerCartBinding
+class CustomerCart :AppCompatActivity() {
+
+    var selectedProducts = mutableListOf<Product>()
+    lateinit var binding: ActivityCustomerCartBinding
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-//        binding= ActivityCustomerCartBinding.inflate(layoutInflater)
-        setContentView(R.layout.activity_customer_cart)
-        getProductDetails()
+        binding= ActivityCustomerCartBinding.inflate(layoutInflater)
+        setContentView(binding.root)
+        selectProduct()
 
     }
 
-    private fun getProductDetails() {
-
-//        val rvOrders = findViewById<RecyclerView>(R.id.rvOrders)
-//        val cardTitle: Array<String> = resources.getStringArray(R.array.cardTitles)
-//        val cardImages: Array<String> = resources.getStringArray(R.array.cardImages)
-//        val cardKilograms: Array<String> = resources.getStringArray(R.array.cardKilograms)
-//        val cardPrices: Array<String> = resources.getStringArray(R.array.cardPrices)
-//        val adapter= RvProductOrderAdapter(cardTitle, cardImages, cardKilograms, cardPrices, baseContext)
-//        val gridLayout = GridLayoutManager(this, 2)
-//        binding.rvOrders.layoutManager = gridLayout
-//        binding.rvOrders.adapter = adapter
-
-        init()
-        LoadProductFromFirebase()
-        countCartfromFireBase()
-
+    override fun onResume() {
+        super.onResume()
+        binding.btnCheckout.setOnClickListener{
+            var intent = Intent(baseContext, CustomerCheckout::class.java)
+            var gson = Gson()
+            intent.putExtra("SELECTED_PRODUCTS", gson.toJson(selectedProducts))
+            startActivity(intent)
+        }
     }
 
-    private fun countCartfromFireBase(){
-        var cartModels : MutableList<CartModel> = ArrayList()
-        FirebaseDatabase.getInstance()
-            .getReference("products")
-//            .child("UNIQUE_USER_ID")
-            .addListenerForSingleValueEvent(object : ValueEventListener{
-                override fun onDataChange(snapshot: DataSnapshot) {
-                    for (cartSnapshot in snapshot.children){
-                        var cartModel = cartSnapshot.getValue(CartModel::class.java)
-                        cartModel!!.image= cartSnapshot.key
-                        cartModels.add(cartModel)
-                    }
-                    cartLoadListener.onLoadCartSuccess(cartModels)
-                }
+    fun selectProduct(){
+//        binding.recyclerCart
+//        recycler_cart = findViewById(R.id.recycler_cart)
+        var productList= listOf(
 
-                override fun onCancelled(error: DatabaseError) {
-//                    cartLoadListener.onLoadCartFailed(error.message)
+            Product("https://www.gardeningknowhow.com/wp-content/uploads/2021/05/whole-and-slices-watermelon.jpg","Watermelon",5.5,220),
+            Product("https://aldprdproductimages.azureedge.net/media/resized/ALL_RESIZED3/56124_0_XL.png","Banana",5.5,120),
+            Product("https://cdnprod.mafretailproxy.com/sys-master-root/h74/h68/15039637389342/1545702_main.jpg","Grapes",5.5,100),
+            Product("https://www.naturespride.eu/media/4syh0q3p/mango-kent.jpg","Mango",5.5,300),
+            Product("https://usapple.org/wp-content/uploads/2019/10/apple-gala.png","Apple",5.5,200),
+            Product("https://pbs.twimg.com/profile_images/1479795532/greenlemon_400x400.png","Lemon",5.5,300)
 
-                }
+        )
+        val gridLayout = GridLayoutManager(this, 2)
+        binding.recyclerCart.layoutManager = gridLayout
+        var cartAdapter= ProductDetailsRecycleView(productList,baseContext,object :ProductClickListener{
+            override fun onSelectedProduct(product: Product){
+                selectedProducts.add(product)
 
-            })
-    }
+            }
 
-
-    private fun LoadProductFromFirebase(){}
-    private fun init(){
-
-        productLoadListener= this
-        cartLoadListener =this
-
-        var gridLayout= GridLayoutManager(this,2)
-        rvProduct.layoutManager= gridLayout
-        rvProduct.addItemDecoration(SpaceItemDecoration())
-
-        val productModels: MutableList<ProductModel> = ArrayList()
-        FirebaseDatabase.getInstance()
-            .getReference("products")
-            .addListenerForSingleValueEvent(object: ValueEventListener{
-                override fun onDataChange(snapshot: DataSnapshot) {
-                    if (snapshot.exists()){
-                        for (productSnapshot in snapshot.children){
-                            val productModel = productSnapshot.getValue(ProductModel::class.java)
-                            productModel!!.image= productSnapshot.key
-                            productModels.add(productModel)
-
-                        }
-                        productLoadListener.onProductLoadSuccess(productModels)
-
-                    }
-                    else
-                        productLoadListener.onProductLoadFailed("Product items not exists")
-
-
-                }
-
-                override fun onCancelled(error: DatabaseError) {
-                    productLoadListener.onProductLoadFailed(error.message)
-                }
-
-            })
+            override fun onDeleteProduct(product: Product) {
+                selectedProducts.remove(product)
+            }
+        })
+        binding.recyclerCart.adapter = cartAdapter
 
     }
+//    val button: Button= findViewById(R.id.btnAdd)
+//    button.setOnClickListener {
+//
+//    }
 
-    override fun onProductLoadSuccess(productModelList: List<ProductModel>?) {
-        val adapter = MyProductAdapter(this, productModelList!!, cartLoadListener)
-        rvProduct.adapter = adapter
-    }
 
 
-    override fun onProductLoadFailed(message: String?) {
-//        Snackbar.make(mainLayout,message!!, Snackbar.LENGTH_LONG).show()
-    }
-
-    override fun onLoadCartSuccess(cartModelList: List<CartModel>) {
-        var cartSum = 0
-        for (cartModel in cartModelList!!) cartSum+= cartModel!!.quantity
-        badge!!.setNumber(cartSum)
-    }
-
-    override fun onLoadCartFailed(message: String?, mainLayout: View) {
-        Snackbar.make(mainLayout,message!!,Snackbar.LENGTH_LONG).show()
+    interface
+    ProductClickListener{
+        fun onSelectedProduct(product: Product)
+        fun onDeleteProduct(product: Product)
 
     }
 

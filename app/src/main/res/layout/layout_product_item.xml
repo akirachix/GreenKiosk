@@ -1,48 +1,129 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    app:cardElevation="12dp"
-    app:cardCornerRadius="20dp"
-    android:padding="12dp">
-    <LinearLayout
-        android:layout_width="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/ordersToolbar"
+        android:background="#43AE60"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:gravity="center"
-        android:padding="16dp">
-        <ImageView
-            android:id="@+id/productImageView"
-            android:layout_width="150dp"
-            android:layout_height="150dp"
-            android:src="@drawable/water_melon"/>
-        <TextView
-            android:id="@+id/txtName"
-            android:text="Watermelon"
-            android:textStyle="bold"
-            android:layout_gravity="start"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+    </androidx.appcompat.widget.Toolbar>
 
-        <TextView
-            android:id="@+id/txtKilogram"
-            android:text="5.5kgs"
-            android:textStyle="bold"
-            android:layout_gravity="start"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cvOrders"
+        android:layout_width="match_parent"
+        android:layout_height="350dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="20dp"
+        app:cardCornerRadius="10dp"
+        app:cardElevation="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="MissingClass">
 
-        <TextView
-            android:id="@+id/txtPrice"
-            android:text="300Ksh"
-            android:textStyle="bold"
-            android:layout_gravity="start"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="414dp">
 
+            <ImageView
+                android:id="@+id/imgProduct"
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:scaleType="fitXY"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:srcCompat="@tools:sample/avatars" />
 
+            <TextView
+                android:id="@+id/etProductName"
+                android:layout_width="41dp"
+                android:layout_height="20dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:text="Name"
+                android:textColor="@color/black"
+                app:layout_constraintBottom_toTopOf="@+id/etPrices"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/imgProduct" />
 
-    </LinearLayout>
+            <TextView
+                android:id="@+id/etKilograms"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="8dp"
+                android:text="kilograms"
+                android:textColor="@color/black"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/etPrices" />
 
-</androidx.cardview.widget.CardView>
+            <TextView
+                android:id="@+id/etPrices"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="6dp"
+                android:text="Prices"
+                android:textColor="@color/black"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/etProductName" />
+
+            <Button
+                android:id="@+id/btnRemove"
+                android:layout_width="42dp"
+                android:layout_height="43dp"
+                android:layout_marginStart="16dp"
+                android:background="@drawable/ic_baseline_remove_24"
+                app:layout_constraintBottom_toBottomOf="@+id/btnAdd"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/btnAdd">
+
+            </Button>
+
+            <Button
+                android:id="@+id/btnAdd"
+                android:layout_width="42dp"
+                android:layout_height="43dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="56dp"
+                android:background="@drawable/ic_baseline_add_24"
+                app:layout_constraintStart_toEndOf="@+id/etNumber"
+                app:layout_constraintTop_toBottomOf="@+id/etKilograms" />
+
+            <TextView
+                android:id="@+id/etNumber"
+                android:layout_width="13dp"
+                android:layout_height="20dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="70dp"
+                android:text="0"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toStartOf="@+id/btnAdd"
+                app:layout_constraintStart_toEndOf="@+id/btnRemove"
+                app:layout_constraintTop_toBottomOf="@+id/etKilograms" />
+
+<!--            <Button-->
+<!--                android:id="@+id/btnCheckout"-->
+<!--                android:layout_width="116dp"-->
+<!--                android:layout_height="43dp"-->
+<!--                android:layout_marginStart="22dp"-->
+<!--                android:layout_marginTop="2dp"-->
+<!--                android:text="Checkout"-->
+<!--                app:layout_constraintStart_toStartOf="parent"-->
+<!--                app:layout_constraintTop_toBottomOf="@+id/btnRemove" />-->
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.cardview.widget.CardView>
+
+</RelativeLayout>
