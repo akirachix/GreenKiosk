@@ -46,8 +46,8 @@ class ProductCategoryActivity : AppCompatActivity() {
             rvproducts.layoutManager = LinearLayoutManager(baseContext)
             rvproducts.adapter = productAdapter
         }
-        else{
-            Toast.makeText(baseContext,"" , Toast.LENGTH_LONG).show()
-        }
+//        else{
+//            Toast.makeText(baseContext,"" , Toast.LENGTH_LONG).show()
+//        }
     }
 }

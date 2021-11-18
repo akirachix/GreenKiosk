@@ -19,7 +19,7 @@ class StartActivity : AppCompatActivity() {
         }
 
         var mamamboga= findViewById<Button>(R.id.btnmama_mboga).setOnClickListener {
-            var intent = Intent(baseContext,AccountMamambogaActivity::class.java)
+            var intent = Intent(baseContext, AccountMamambogaActivity::class.java)
             startActivity(intent)
         }
     }

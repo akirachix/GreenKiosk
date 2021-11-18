@@ -7,33 +7,42 @@ import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
 import com.example.greenkiosk.R
+import com.example.greenkiosk.databinding.ActivityCustomerCartBinding
+import com.example.greenkiosk.databinding.ActivityCustomerCheckoutBinding
+import com.google.gson.Gson
+import com.google.gson.reflect.TypeToken
 import com.squareup.picasso.Picasso
+import kotlinx.android.synthetic.main.activity_customer_checkout.*
 
-class CustomerCheckout : AppCompatActivity() {
-    lateinit var btnCheckout: Button
+class CustomerCheckout :AppCompatActivity(){
+
+    lateinit var binding: ActivityCustomerCheckoutBinding
     override fun onCreate(savedInstanceState: Bundle?) {
+        binding= ActivityCustomerCheckoutBinding.inflate(layoutInflater)
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_customer_checkout)
-        var button = findViewById<Button>(R.id.btnchechout).setOnClickListener {
-            var intent = Intent(baseContext, CustomerSignUp::class.java)
-            startActivity(intent)
+        setContentView(binding.root)
+
+        binding.btnNext.setOnClickListener {
+            var intent1 = Intent(baseContext, CustomerLogIn::class.java)
+            startActivity(intent1)
         }
-        var etProductName= findViewById<TextView>(R.id.etProductName)
-        val etKilogram = findViewById<TextView>(R.id.etKilogram)
-        val etPrice = findViewById<TextView>(R.id.etPrice)
-        val img = findViewById<ImageView>(R.id.img)
+
+        var selectedProductsStr = intent.getStringExtra("SELECTED_PRODUCTS")
+        var gson = Gson()
+        val productListType = object : TypeToken<List<Product>>() {}.type
+        var products: List<Product> = gson.fromJson(selectedProductsStr, productListType)
 
 
-        var nameIntent = intent.getStringExtra("Name")
-        var kilogramIntent = intent.getStringExtra("Kilograms")
-        var priceIntent = intent.getStringExtra("Prices")
-        var imageUrl = intent.getStringExtra("imageUrl")
-        Picasso.get()
-            .load(imageUrl).into(img)
+        print(products)
 
-        etProductName.text = nameIntent
-        etKilogram.text  = kilogramIntent
-        etPrice.text = priceIntent
+        val imgUrl = findViewById<ImageView>(R.id.img)
+
+
+        var imageUrl=intent.getStringExtra("imageUrl")
+      Picasso.get().load(imageUrl).into(imgUrl)
+
+
 
     }
+
 }
