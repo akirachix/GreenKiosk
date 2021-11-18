@@ -8,6 +8,7 @@ import androidx.recyclerview.widget.GridLayoutManager
 import com.example.greenkiosk.R
 import com.example.greenkiosk.databinding.ActivityCustomerCartBinding
 import com.google.gson.Gson
+import kotlinx.android.synthetic.main.activity_customer_checkout.*
 import kotlinx.android.synthetic.main.layout_product_item.*
 
 
@@ -18,6 +19,7 @@ class CustomerCart :AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
         binding= ActivityCustomerCartBinding.inflate(layoutInflater)
         setContentView(binding.root)
         selectProduct()
@@ -39,17 +41,18 @@ class CustomerCart :AppCompatActivity() {
 //        recycler_cart = findViewById(R.id.recycler_cart)
         var productList= listOf(
 
-            Product("https://www.gardeningknowhow.com/wp-content/uploads/2021/05/whole-and-slices-watermelon.jpg","Watermelon",5.5,220),
-            Product("https://aldprdproductimages.azureedge.net/media/resized/ALL_RESIZED3/56124_0_XL.png","Banana",5.5,120),
-            Product("https://cdnprod.mafretailproxy.com/sys-master-root/h74/h68/15039637389342/1545702_main.jpg","Grapes",5.5,100),
-            Product("https://www.naturespride.eu/media/4syh0q3p/mango-kent.jpg","Mango",5.5,300),
-            Product("https://usapple.org/wp-content/uploads/2019/10/apple-gala.png","Apple",5.5,200),
-            Product("https://pbs.twimg.com/profile_images/1479795532/greenlemon_400x400.png","Lemon",5.5,300)
+            Product("https://www.gardeningknowhow.com/wp-content/uploads/2021/05/whole-and-slices-watermelon.jpg","Watermelon",5,220),
+            Product("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRvuFWmgStX6zF38A7ZufXtDXTlUag-rcKnew&usqp=CAU","Banana",5,120),
+            Product("https://cdnprod.mafretailproxy.com/sys-master-root/h74/h68/15039637389342/1545702_main.jpg_1700Wx1700H","Grapes",5,100),
+            Product("https://www.naturespride.eu/media/4syh0q3p/mango-kent.jpg","Mango",5,300),
+            Product("https://usapple.org/wp-content/uploads/2019/10/apple-gala.png","Apple",5,200),
+            Product("https://pbs.twimg.com/profile_images/1479795532/greenlemon_400x400.png","Lemon",5,300)
 
         )
         val gridLayout = GridLayoutManager(this, 2)
         binding.recyclerCart.layoutManager = gridLayout
         var cartAdapter= ProductDetailsRecycleView(productList,baseContext,object :ProductClickListener{
+
             override fun onSelectedProduct(product: Product){
                 selectedProducts.add(product)
 
@@ -62,12 +65,14 @@ class CustomerCart :AppCompatActivity() {
         binding.recyclerCart.adapter = cartAdapter
 
     }
+
+
+
+
 //    val button: Button= findViewById(R.id.btnAdd)
 //    button.setOnClickListener {
 //
 //    }
-
-
 
     interface
     ProductClickListener{

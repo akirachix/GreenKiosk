@@ -15,7 +15,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.GreenKiosk">
         <activity
-            android:name=".MamaMboga.AccountMamambogaActivity"
+            android:name="com.example.greenkiosk.UI.MamaMboga.AccountMamambogaActivity"
             android:exported="true" />
         <activity
             android:name=".Customer.DeliveryMethodActivity"
@@ -36,11 +36,11 @@
             android:exported="true"
             android:parentActivityName=".Customer.CategoryActivity"/>
         <activity
-            android:name=".MamaMboga.CompleteOrdersActivity"
+            android:name="com.example.greenkiosk.UI.MamaMboga.CompleteOrdersActivity"
             android:exported="true" />
-        <activity android:name=".MamaMboga.loginActivity" />
+        <activity android:name="com.example.greenkiosk.UI.MamaMboga.loginActivity" />
         <activity
-            android:name=".MamaMboga.SplashScreen"
+            android:name="com.example.greenkiosk.UI.MamaMboga.SplashScreen"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -49,7 +49,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".MamaMboga.WorkinghoursActivity"
+            android:name="com.example.greenkiosk.UI.MamaMboga.WorkinghoursActivity"
             android:exported="true" />
         <activity
             android:name=".Customer.CustomerCart"
@@ -63,19 +63,19 @@
             android:name=".Customer.CustomerLocation"
             android:exported="true" />
         <activity
-            android:name=".MamaMboga.Mamamboga_Location"
+            android:name="com.example.greenkiosk.UI.MamaMboga.Mamamboga_Location"
             android:exported="true" />
         <activity
-            android:name=".MamaMboga.MamaMboga_Resetpassword"
+            android:name="com.example.greenkiosk.UI.MamaMboga.MamaMboga_Resetpassword"
             android:exported="true" />
         <activity
-            android:name=".MamaMboga.MamaMbogaPending"
+            android:name="com.example.greenkiosk.UI.MamaMboga.MamaMbogaPending"
             android:exported="true" />
         <activity
-            android:name=".MamaMboga.MamaMbogaVerificationCode"
+            android:name="com.example.greenkiosk.UI.MamaMboga.MamaMbogaVerificationCode"
             android:exported="true" />
         <activity
-            android:name=".MamaMboga.Update_Orders_Activity"
+            android:name="com.example.greenkiosk.UI.MamaMboga.Update_Orders_Activity"
             android:exported="true" />
         <activity
             android:name=".Customer.CustomerVerification"

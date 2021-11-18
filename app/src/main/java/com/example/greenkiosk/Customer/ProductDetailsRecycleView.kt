@@ -26,21 +26,22 @@ class ProductDetailsRecycleView(
     override fun onBindViewHolder(holder: CartProductViewHolder, position: Int) {
       var currentProduct = productList.get(position)
       holder.etProductName.text= currentProduct.productName
-      holder.etQuantity.text=StringBuilder("kgs").append(currentProduct.quantity.toString())
-      holder.etPrices.text=StringBuilder("ksh").append(currentProduct.prices.toString())
+      holder.etQuantity.text=currentProduct.quantity.toString()
+      holder.etPrices.text=currentProduct.prices.toString()
         Picasso.get()
             .load(currentProduct.imageUrl)
             .resize(100, 100)
             .into(holder.imgProduct)
 //
-//        holder.cvOrders.setOnClickListener {
-//            var intent= Intent(context, CustomerCheckout::class.java)
-//            intent.putExtra("ProductName",currentProduct.productName)
-//            intent.putExtra("Quantity",currentProduct.quantity)
-//            intent.putExtra("Price",currentProduct.prices)
-//            intent.putExtra("ImageUrl",currentProduct.imageUrl)
-//            context.startActivity(intent)
-//        }
+        holder.cvOrders.setOnClickListener {
+            var intent= Intent(context, CustomerCheckout::class.java)
+            intent.putExtra("ProductName",currentProduct.productName)
+            intent.putExtra("Quantity",currentProduct.quantity)
+            intent.putExtra("Price",currentProduct.prices)
+            intent.putExtra("ImageUrl",currentProduct.imageUrl)
+            intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+            context.startActivity(intent)
+        }
 
 
         holder.btnAdd.setOnClickListener {

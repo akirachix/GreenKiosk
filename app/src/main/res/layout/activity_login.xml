@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:backgroundTint="#59AF61"
-    tools:context=".MamaMboga.loginActivity">
+    tools:context=".UI.MamaMboga.loginActivity">
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"

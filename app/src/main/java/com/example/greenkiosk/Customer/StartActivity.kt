@@ -4,7 +4,7 @@ import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
-import com.example.greenkiosk.MamaMboga.AccountMamambogaActivity
+import com.example.greenkiosk.UI.MamaMboga.AccountMamambogaActivity
 import com.example.greenkiosk.R
 
 class StartActivity : AppCompatActivity() {

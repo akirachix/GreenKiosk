@@ -15,8 +15,9 @@
         app:itemTextColor="#000000"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintLeft_toRightOf="parent">
-<!--        app:menu="@menu/menu1">-->
+        app:layout_constraintLeft_toRightOf="parent"
+        app:menu="@menu/menu1">
+
 
         <Button
             android:id="@+id/btnbutton2"
@@ -24,27 +25,6 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="150dp"
             android:visibility="gone" />
-
-        <Button
-            android:id="@+id/btnHome"
-            android:layout_width="30dp"
-            android:layout_height="20dp"
-            android:layout_marginStart="40dp"
-            android:layout_marginTop="16dp" />
-
-        <Button
-            android:id="@+id/btnUpdates"
-            android:layout_width="30dp"
-            android:layout_height="20dp"
-            android:layout_marginStart="200dp"
-            android:layout_marginTop="24dp" />
-
-        <Button
-            android:id="@+id/btnNotification"
-            android:layout_width="30dp"
-            android:layout_height="20dp"
-            android:layout_marginStart="320dp"
-            android:layout_marginTop="16dp" />
 
     </com.google.android.material.bottomnavigation.BottomNavigationView>
 

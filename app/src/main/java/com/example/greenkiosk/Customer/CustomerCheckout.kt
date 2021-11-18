@@ -13,9 +13,9 @@ import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
 import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.activity_customer_checkout.*
+import kotlinx.android.synthetic.main.products_item_list.*
 
 class CustomerCheckout :AppCompatActivity(){
-
     lateinit var binding: ActivityCustomerCheckoutBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         binding= ActivityCustomerCheckoutBinding.inflate(layoutInflater)
@@ -32,16 +32,35 @@ class CustomerCheckout :AppCompatActivity(){
         val productListType = object : TypeToken<List<Product>>() {}.type
         var products: List<Product> = gson.fromJson(selectedProductsStr, productListType)
 
+//
+//
+//        print(products)
 
-        print(products)
+//        val imgUrl = findViewById<ImageView>(R.id.img)
+//
+//
+//        var imageUrl=intent.getStringExtra("imageUrl")
+//      Picasso.get().load(imageUrl).into(imgUrl)
 
+        var etName = findViewById<TextView>(R.id.etProductName)
+        val etQuantity = findViewById<TextView>(R.id.etQuantity)
+        val etPrice = findViewById<TextView>(R.id.etPrice)
         val imgUrl = findViewById<ImageView>(R.id.img)
+        val tvTotal = findViewById<TextView>(R.id.tvTotal)
 
 
+        var nameIntent=intent.getStringExtra("ProductName")
+        var quantityIntent=intent.getIntExtra("Quantity",0)
+        var priceIntent=intent.getIntExtra("Price",0)
         var imageUrl=intent.getStringExtra("imageUrl")
-      Picasso.get().load(imageUrl).into(imgUrl)
+        Picasso.get().load(imageUrl).into(imgUrl)
 
+        etName.text = nameIntent
+        etQuantity.text = quantityIntent.toString()
+        etPrice.text = priceIntent.toString()
+        var totalPrice = quantityIntent * priceIntent
 
+        tvTotal.text = totalPrice.toString()
 
     }
 
