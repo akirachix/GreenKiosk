@@ -16,16 +16,11 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.GreenKiosk">
         <activity
-            android:name=".MainActivity"
+            android:name=".Customer.successActivity"
             android:exported="true" />
         <activity
-            android:name=".MamambogaMain"
+            android:name=".MamaMboga.Notifications"
             android:exported="true" />
-        <activity
-            android:name=".MainNavigation"
-            android:exported="true"
-            android:label="@string/title_activity_main_navigation"
-            android:theme="@style/Theme.GreenKiosk.NoActionBar" />
         <activity
             android:name=".MainOrders"
             android:exported="true" />
@@ -81,7 +76,7 @@
             android:name=".MamaMboga.MamaMboga_Resetpassword"
             android:exported="true" />
         <activity
-            android:name=".MamaMboga.MamaMbogaPendingOrders"
+            android:name=".MamaMboga.MamaMbogaPending"
             android:exported="true" />
         <activity
             android:name=".MamaMboga.MamaMbogaVerificationCode"

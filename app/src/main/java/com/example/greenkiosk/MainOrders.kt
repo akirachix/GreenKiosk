@@ -1,74 +1,40 @@
 package com.example.greenkiosk
 
-import android.content.ClipData
+import android.content.Intent
 import android.os.Bundle
-import android.view.View.inflate
-import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.content.res.ColorStateListInflaterCompat.inflate
-import androidx.core.content.res.ComplexColorCompat.inflate
-import androidx.core.graphics.drawable.DrawableCompat.inflate
-import androidx.lifecycle.LiveData
-import androidx.lifecycle.MutableLiveData
-import androidx.lifecycle.Observer
-import androidx.lifecycle.ViewModel
-import androidx.lifecycle.viewmodel.compose.viewModel
-import androidx.navigation.NavController
-import androidx.navigation.Navigation
-import androidx.navigation.ui.NavigationUI
-import com.example.greenkiosk.R.id.updateFragment
-import com.example.greenkiosk.R.id.updateOrders
+import android.widget.Button
+import com.example.greenkiosk.Customer.CategoryActivity
+import com.example.greenkiosk.MamaMboga.CompleteOrdersActivity
+import com.example.greenkiosk.MamaMboga.MamaMbogaPending
+import com.example.greenkiosk.MamaMboga.Notifications
+import com.example.greenkiosk.MamaMboga.Update_Orders_Activity
 
-import com.google.android.material.bottomnavigation.BottomNavigationView
-import kotlin.properties.ReadOnlyProperty
+class MainOrders : AppCompatActivity() {
+    lateinit var pending: Button
+    lateinit var complete: Button
+    lateinit var update: Button
+    lateinit var notifications: Button
 
-abstract class MainOrders : AppCompatActivity() {
-    abstract val position: Any
-    abstract val bottomNavView: BottomNavigationView
-    lateinit var navController: NavController
-    lateinit var binding: MainOrders
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setupViews()
-    }
-
-    fun setupViews() : Any {
-        val bottomNavView: BottomNavigationView = binding.bottomNavView;
-        navController = Navigation.findNavController(this@MainOrders,R.id.updateOrders)
-        NavigationUI.setupWithNavController(bottomNavView,navController)
-        when (position) {
-            1 -> return PendingOrder()
-            2 -> return CompleteOrders()
+        setContentView(R.layout.activity_main_orders)
+        var pending = findViewById<Button>(R.id.btnpendingOrders).setOnClickListener {
+            var intent = Intent(baseContext,MamaMbogaPending::class.java)
+            startActivity(intent)
         }
-        return UpdateOrders()
+        var complete = findViewById<Button>(R.id.btnCompletedOrder).setOnClickListener {
+            var intent = Intent(baseContext,CompleteOrdersActivity::class.java)
+            startActivity(intent)
+        }
+        var update = findViewById<Button>(R.id.btnupdateOrders).setOnClickListener {
+            var intent = Intent(baseContext,Update_Orders_Activity::class.java)
+            startActivity(intent)
+        }
+        var notifications = findViewById<Button>(R.id.btnNotifications).setOnClickListener {
+            var intent = Intent(baseContext,Notifications::class.java)
+            startActivity(intent)
+        }
+
     }
 }
-//    class ItemViewModel : ViewModel() {
-//        private val mutableSelectedItem = MutableLiveData<ClipData.Item>()
-//        val selectedItem: LiveData<ClipData.Item> get() = mutableSelectedItem
-//
-//        fun selectItem(item: ClipData.Item) {
-//            mutableSelectedItem.value = item
-//        }
-//    }
-//
-//    private val viewModel: ItemViewModel by viewModels()
-//        override fun onCreate(savedInstanceState: Bundle?) {
-//            super.onCreate(savedInstanceState)
-//            viewModel.selectedItem.observe(this, Observer { item ->
-//            })
-//        }
-//}
-//    private val viewModel: MainOrders.ItemViewModel by activityViewModels()
-//
-//    fun activityViewModels(): ReadOnlyProperty<Nothing? , MainOrders.ItemViewModel> {
-//        fun onCreate(savedInstanceState: Bundle?) {
-////            setContentView(R.layout.activity_complete_orders)
-//            return
-//        }
-//
-//        fun onItemClicked(item: ClipData.Item) {
-//            viewModel(updateFragment)
-//        }
-//        return (updateOrders)
-//    }

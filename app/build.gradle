@@ -76,6 +76,5 @@ plugins {
             implementation("androidx.navigation:navigation-testing:2.3.5")
             implementation("androidx.navigation:navigation-compose:2.4.0-beta02")
             implementation 'com.google.android.material:material:1.5.0-beta01'
-            implementation 'androidx.appcompat:support:1.3.1'
             implementation 'androidx.fragment:fragment-ktx:1.3.6'
         }
